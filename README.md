@@ -1,2 +1,2 @@
 # pay-theory-docs
-ReadMes for our Documentation
+ReadMes for PayTheory Documentation
