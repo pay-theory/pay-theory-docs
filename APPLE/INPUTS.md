@@ -1,4 +1,4 @@
-# Pay Theory Inputs
+# Input Views
 
 These SwiftUI views are used to collect payment information from the user. They are designed to be used with PayTheory Object to make payments and tokenize payment methods.
 

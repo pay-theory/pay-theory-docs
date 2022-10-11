@@ -8,7 +8,7 @@ These functions will return a response to the completion handler you set on the 
 
 This function is used to submit a payment to Pay Theory.
 
-```
+```swift
 let payTheory = PayTheory(apiKey: "YOUR_API_KEY")
 
 paytheory.transact(amount: 3300, accountCode: "custom_account_code", payorId: "pt_payor_id", ...)
