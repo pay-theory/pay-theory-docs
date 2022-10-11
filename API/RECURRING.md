@@ -216,7 +216,7 @@ The total number of recurring payments that match the query. Used to help with p
 ## Create Recurring Payment
 
 ```js
-{
+mutation {
   createRecurringPayment(input: {
             account_code: String, 
             amount: Int, 
@@ -347,7 +347,7 @@ The call will return the newly created recurring payment.
 ## Update Recurring Payment
 
 ```js
-{
+mutation {
     updateRecurringPayment(input: {
                 payment_method_id: String, 
                 recurring_id: String, 
@@ -423,7 +423,7 @@ The call will return the updated recurring payment object.
 *Once a recurring payment is cancelled, it cannot be reactivated.*
 
 ```js
-{
+mutation {
     cancelRecurringPayment(recurring_id: String)
 }
 ```
@@ -497,7 +497,7 @@ This should be used when the state is `INSTRUMENT_FAILURE` and the issue with th
 *EX: Payment failed for insufficient funds on the card, but the customer has since made a payment on the balance to resolve the issue.*
 
 ```js
-{
+mutation {
     createRetryForFailedRecurringPayment(recurring_id: "")
 }
 ```

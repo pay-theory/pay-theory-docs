@@ -83,6 +83,8 @@ This query would return the transaction_id, settlement_batch, status, and full_n
 }
 ```
 
+## Authentication
+
 To authenticate your request, you need to pass an Authorization header with your call.
 
 For a partner the key should have the word partner followed by a semicolon and their secret key:
@@ -92,6 +94,12 @@ For a partner the key should have the word partner followed by a semicolon and t
 For a merchant or system, the key should have their merchant_uid followed by a semicolon and their secret key:
 
 `Authorization: MERCHANT_UID;SECRET_KEY`
+
+**Note:** The secret key is not the same as the API key. You can find your secret key in the PayTheory Portal under the Settings tab. 
+
+This key should be stored securely and not shared with anyone. It should be used server side, stored in an environment variable, and not embedded in your mobile applications or websites.
+
+## POST GraphQL Query
 
 Queries are then executed by sending POST HTTP requests to the endpoint:
 
