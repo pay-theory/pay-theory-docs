@@ -95,4 +95,4 @@ You can manage your recurring payments using the GraphQL API. These calls are av
 * [Missed Recurring Payment Data](api/recurring#get-missed-recurring-payment-data)
   * Query how many payments have been missed and the total amount of those payments. This is useful if you want to charge a customer for all missed payments at once when updating their payment method.
 * [Retry Failed Recurring Paymenr](api/recurring#create-retry-for-failed-recurring-payment)
-  * Retry a failed recurring payment. This should be used if the payment method on file is still valid, and you want to retry the payment.\
+  * Retry a failed recurring payment. This should be used if the payment method on file is still valid, and you want to retry the payment.
