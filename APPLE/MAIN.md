@@ -78,6 +78,6 @@ Button("Make Payment") {
 
 The response from Pay Theory will be sent to the completion handler you set in step 1. A successful response will return a `[String: Any]` dictionary. A failure response will return a `FailureResponse` object.
 
-The `Failure Response` object is defined [here](completion_handler#failure-response) and the success response dictionary is defined [here](completion_handler#success-response).
+The `Failure Response` object is defined [here](apple/completion_handler#failure-response) and the success response dictionary is defined [here](apple/completion_handler#success-response).
 
 
