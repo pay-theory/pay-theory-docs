@@ -182,15 +182,15 @@ To style the input parent div simply provide your own CSS for the pay theory con
 
 To style the input fields you can pass in a custom style object to the create function in our SDK. This allows you to style the text inside the inputs as well as the style of the radio buttons for the ACH account type.
 
-- default: (Object) The way a text field look when it is not in state success or error.
-- success: (Object) The way a text field look when it is valid. Only applies to fields that go through validation.
-- error: (Object) The way a text field look when it is invalid. Only applies to fields that go through validation.
-- radio: The way radio buttons look for the ACH account type
-    - width: (Int) The width in pixels of the radio buttons
-    - fill: (String) The color of the radio buttons
-    - stroke: (String) The color of the radio buttons border
-    - text: (Object) This style object will be used to style the labels for the radio buttons
-- hidePlaceholder: (Boolean) that allows you to hide the placeholder text in the input fields
+- `default`: (Object) The way a text field look when it is not in state success or error.
+- `success`: (Object) The way a text field look when it is valid. Only applies to fields that go through validation.
+- `error`: (Object) The way a text field look when it is invalid. Only applies to fields that go through validation.
+- `radio`: The way radio buttons look for the ACH account type
+    - `width`: (Int) The width in pixels of the radio buttons
+    - `fill`: (String) The color of the radio buttons
+    - `stroke`: (String) The color of the radio buttons border
+    - `text`: (Object) This style object will be used to style the labels for the radio buttons
+- `hidePlaceholder`: (Boolean) that allows you to hide the placeholder text in the input fields
 
 
 ```javascript
@@ -223,17 +223,17 @@ const STYLES = {
 ## Payor Information
 This data will be used to create a payor that is tied to a payment.
 
-- first_name: (String) The first name of the payor
-- last_name: (String) The last name of the payor
-- email: (String) The email address of the payor
-- phone: (String) The phone number of the payor
-- personal_address: (Object) The address of the payor
-  - line1: (String) The street address of the payor
-  - line2: (String) The street address of the payor
-  - city: (String) The city of the payor
-  - region: (String) The region (state) of the payor
-  - postal_code: (String) The postal code of the payor
-  - country: (String) The country of the payor
+- `first_name`: (String) The first name of the payor
+- `last_name`: (String) The last name of the payor
+- `email`: (String) The email address of the payor
+- `phone`: (String) The phone number of the payor
+- `personal_address`: (Object) The address of the payor
+  - `line1`: (String) The street address of the payor
+  - `line2`: (String) The street address of the payor
+  - `city`: (String) The city of the payor
+  - `region`: (String) The region (state) of the payor
+  - `postal_code`: (String) The postal code of the payor
+  - `country`: (String) The country of the payor
 
 ```json
 {
@@ -527,70 +527,70 @@ directed to a results page.
 These are the values that you can pass into the `transact` function to customize the payment.  
 The only required key is `amount`.
 
-* amount: (Int)
+* `amount`: (Int)
   * represents the amount to be charged in cents
 
 
-* payorInfo: (Object)
+* `payorInfo`: (Object)
   * see the PAYOR_INFO object above for details
 
 
-* metadata: (Object)
+* `metadata`: (Object)
   * see the PAYMENT_METADATA object above for details 
 
 
-* feeMode: (String)
+* `feeMode`: (String)
   * Defaults to `window.paytheory.INTERCHANGE`. If available to merchant and set to `window.paytheory.SERVICE_FEE` the fee will be added to the amount and charged to the payor. More details about the fee modes in your PayTheory Portal.
 
-* fee: (Int)
+* `fee`: (Int)
   * Represents the fee to be charged in cents. 
   * If you are using `SERVICE_FEE` mode and want to skip the confirmation step, you must provide the fee amount. This will be validated to make sure it matches the fee amount that would be charged. If the fee amount does not match, an error will be thrown.
 
-* confirmation: (Boolean)
+* `confirmation`: (Boolean)
   * Defaults to `false`. If set to `true` the payment will return a response to the tokenizeObserver before it needs to be confirmed. Required if using `SERVICE_FEE` fee mode. 
 
 
-* accountCode: (String)
+* `accountCode`: (String)
   * Code that can be used to track a payment or group of payments. Will be included in the transaction schema and in the PayTheory Portal.
 
 
-* reference: (String)
+* `reference`: (String)
   * Custom description assigned to a payment. Will be included in the transaction schema and in the PayTheory Portal.
 
 
-* paymentParameters: (String)
+* `paymentParameters`: (String)
   * The payment parameters to use for the payment.
   * For more information on payment parameters check out the [Payment Parameters](payment-parameters) documentation.
 
 
-* payorId: (String)
+* `payorId`: (String)
   * The PayTheory payor ID to use for the payment. Allows for user to manage identities. 
   * This cannot be used if also using the `payorInfo` parameter.
 
 
-* invoiceId: (String)
+* `invoiceId`: (String)
   * The PayTheory invoice ID to use for the payment. Allows for user to assign a payment to an invoice. 
 
-* recurringId: (String)
+* `recurringId`: (String)
   * The PayTheory recurring ID to use for the payment. Allows for user to assign a payment to a recurring payment.
   * If you pass in a recurring ID, the transactions amount must be an interval of the recurring payments amount per payment.
 
-* sendReceipt: (Boolean)
+* `sendReceipt`: (Boolean)
   * Pass *true* to send a receipt to the payor. Must have an email address on the payorInfo object or pass in a payorId that has an email address tied to it. 
 
 
-* receiptDescription: (String) 
+* `receiptDescription`: (String) 
   * Description to be included in the receipt. Defaults to "Payment from {merchant name}". 
   * For more info on receipts check out the [Receipts](email-receipts) documentation.
 
 ## Tokenize Payment Method Parameters
 These are the values that you can pass into the `tokenizePaymentMethod` function to tokenize a card or bank account.
 
-* payorInfo: (Object)
+* `payorInfo`: (Object)
   * see the PAYOR_INFO object above for details
-* metadata: (Object)
+* `metadata`: (Object)
   * see the PAYMENT_METADATA object above for details
-* payorId: (String)
+* `payorId`: (String)
   * The PayTheory payor ID to use for the payment. Allows for user to manage identities. 
   * This cannot be used if also using the `payorInfo` parameter.
 
