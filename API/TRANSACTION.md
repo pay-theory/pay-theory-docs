@@ -207,7 +207,7 @@ The total number of transactions that match the query. Used to help with paginat
 ## Create One Time Payment
 
 ```js
-{
+mutation {
   createOneTimePayment(amount: Int, 
           merchant_uid: String, 
           payment_method_id: String, 

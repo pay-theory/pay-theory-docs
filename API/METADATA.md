@@ -7,7 +7,7 @@ These calls allow you to update or delete metadata for an item you created with 
 ## Update Metadata
 
 ```js
-{
+mutation {
   updateMetadata(id: String, merchant_uid: String, metadata: JSON, metadata_associate: MetadataAssociate)
 }
 ```
@@ -36,7 +36,7 @@ Returns true if it was successful or an error if it was not.
 ## Delete Metadata
 
 ```js
-{
+mutation {
   deleteMetadata(id: String, merchant_uid: String, metadata_associate: MetadataAssociate, metadata_keys: [String]!)
 }
 ```

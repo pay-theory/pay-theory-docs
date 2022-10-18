@@ -18,7 +18,7 @@ To initialize the PayTheory object, you need to provide your API key. You can fi
 
 You also need to set your completion handler on `completion` value of the PayTheory object. This is where you will receive any responses from Pay Theory.
 
-*We recommend you set the completion handler in `onAppear`, `viewDidAppear`, or `viewWillAppear` to allow referring to self in the completion handler.*
+*We recommend you set the completion handler in `onAppear`, `viewDidAppear`, or `viewWillAppear`.*
 
 ```swift
 let payTheory = PayTheory(apiKey: "YOUR_API_KEY")
@@ -78,6 +78,6 @@ Button("Make Payment") {
 
 The response from Pay Theory will be sent to the completion handler you set in step 1. A successful response will return a `[String: Any]` dictionary. A failure response will return a `FailureResponse` object.
 
-The `Failure Response` object is defined [here]() and the success response dictionary is defined [here]().
+The `Failure Response` object is defined [here](apple/completion_handler#failure-response) and the success response dictionary is defined [here](apple/completion_handler#success-response).
 
 
