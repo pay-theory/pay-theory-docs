@@ -21,15 +21,15 @@ You will need to know the device ID of the device you want to activate. You can 
                                   operator: EQUAL
                                 }
                               ]
-                  }) {
-    items {
-      device_description
-      device_id
-      device_name
-      is_active
-      merchant_uid
-    }
-  }
+          }) {
+                items {
+                  device_description
+                  device_id
+                  device_name
+                  is_active
+                  merchant_uid
+                }
+              }
 }
 ```
 
@@ -93,7 +93,7 @@ You should receive two responses after calling the `activateCardPresentDevice` f
 
 The first response will be a `ACTIVATED` message. This will let you know that the device is ready to accept a payment.
 
-The second response will be a `COMPLETE` message. This will let you know that the device has completed the payment session, but it could be either a `SUCCEEDED` or `FAILURE` message. You will need to check the `result` field to see if the payment was successful.
+The second response will be a `COMPLETE` message. This will let you know that the device has completed the payment session, but it could be either a `SUCCEEDED` or `FAILURE` message. You will need to check the `status` field to see if the payment was successful.
 
 
 

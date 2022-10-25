@@ -50,9 +50,9 @@ const myPayTheory = await window.paytheory.create(
 
 After you have initialized the Pay Theory object, you can mount the fields and add event listeners.
 
-Mount function will mount all the hosted fields with any styles you passed into the create function.
+The [mount](web/functions#mount) function will mount all the hosted fields with any styles you passed into the create function.
 
-Listeners will listen for any messages from the hosted fields.
+[Event Listeners](web/event_listeners) will listen for any messages from the hosted fields.
 
 ```javascript
 // Mount the fields
@@ -82,9 +82,9 @@ myPayTheory.transactedObserver(result => {
 
 ## Step 4: Submit Payment once Form is Valid
 
-Once you have received the correct message from the `validObserver`, you can submit the payment.
+Use [State Listeners](web/state_listeners) to tell when the hosted fields are valid and you can submit the payment.
 
-The only required field for the transact function is the `amount` field.
+The only required field for the [transact function](web/functions#transact) is the `amount` field.
 
 ```javascript
 //Amount passed in is in cents

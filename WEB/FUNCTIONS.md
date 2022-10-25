@@ -6,7 +6,7 @@ These functions are available on the object returned by the `create` function.
 
 ## create
 
-The `create` function is used to initialize the Pay Theory object. This function takes two arguments, the API key and the [styles object](web/hosted-fields#stylying-hosted-fields).
+The `create` function is used to initialize the Pay Theory object. This function takes two arguments, the API key and the [styles object](hosted_fields#stylying-hosted-fields).
 
 ```javascript
 const API_KEY = "YOUR_API_KEY"
@@ -17,7 +17,7 @@ const STYLES = {
 const myPayTheory = await window.paytheory.create(API_KEY, STYLES)
 ```
 
-This function returns a promise that resolves to the Pay Theory object containing the functions listed below and all available [Event Listeners](web/event-listeners) and [State Listeners](web/state-listeners).
+This function returns a promise that resolves to the Pay Theory object containing the functions listed below and all available [Event Listeners](event_listeners) and [State Listeners](state_listeners).
 
 ## mount
 
@@ -114,7 +114,7 @@ The only required key is `amount`.
 
 - `paymentParameters`: (String)
   - The payment parameters to use for the payment.
-  - For more information on payment parameters check out the [Payment Parameters](payment-parameters) documentation.
+  - For more information on payment parameters check out the [Payment Parameters](/overview/payment_parameters) documentation.
 
 
 - `payorId`: (String)
@@ -137,7 +137,7 @@ The only required key is `amount`.
 
 - `receiptDescription`: (String)
   - Description to be included in the receipt. Defaults to "Payment from {merchant name}".
-  - For more info on receipts check out the [Receipts](email-receipts) documentation.
+  - For more info on receipts check out the [Receipts](/overview/email_receipts) documentation.
 
 Once the transact function is called, if you passed `true` to `requireConfirmation` you will receive a response from the `tokenizeObserver`.
 
@@ -301,7 +301,7 @@ The only required key is `amount`.
 
 - `paymentParameters`: (String)
   - The payment parameters to use for the payment.
-  - For more information on payment parameters check out the [Payment Parameters](payment-parameters) documentation.
+  - For more information on payment parameters check out the [Payment Parameters](/overview/payment_parameters) documentation.
 
 
 - `payorId`: (String)
@@ -324,7 +324,7 @@ The only required key is `amount`.
 
 - `receiptDescription`: (String)
   - Description to be included in the receipt. Defaults to "Payment from {merchant name}".
-  - For more info on receipts check out the [Receipts](email-receipts) documentation.
+  - For more info on receipts check out the [Receipts](/overview/email_receipts) documentation.
 
 Once the function is called you should receive a response to the `cardPresentObserver`.
 
