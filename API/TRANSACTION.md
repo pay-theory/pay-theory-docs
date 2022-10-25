@@ -33,7 +33,7 @@ Transactions are a data object that can represent a payment, failed or successfu
 ```
 
 **`merchant_uid`: String**  
-The PayTheory unique identifier assigned to the merchant that the transaction belongs to.
+The Pay Theory unique identifier assigned to the merchant that the transaction belongs to.
 
 **`transaction_id`: String**  
 The unique transaction id.
@@ -168,7 +168,7 @@ If the direction is `BACKWARD`, the offset is the first item in the previous lis
 The `transaction_id` of the offset item. If the direction is `FORWARD`, the offset item is the last item in the list. If the direction is `BACKWARD`, the offset is the first item in the list.
 
 **`query`: QueryObject**  
-The query to filter the transactions with based on PayTheory defined data.  Detailed information about the query object can be found [here](query).
+The query to filter the transactions with based on Pay Theory defined data.  Detailed information about the query object can be found [here](query).
 
 ### Nested Arguments
 #### Metadata, PaymentMethod, PaymentMethod/Payor
@@ -242,10 +242,10 @@ mutation {
 The amount of the transaction. If the FeeMode is `SERVICE_FEE`, this is the amount of the transaction before fees.
 
 **`merchant_uid`: String**  
-The PayTheory unique identifier for the merchant the transaction is for.
+The Pay Theory unique identifier for the merchant the transaction is for.
 
 **`payment_method_id`: String**  
-The PayTheory unique identifier for the payment method the transaction will be charged to.
+The Pay Theory unique identifier for the payment method the transaction will be charged to.
 
 If your fee mode is `SERVICE_FEE`, you must also pass in the `fee` and `fee_mode` arguments.
 **`fee`: Int**  
@@ -266,7 +266,7 @@ Customer defined account code for the transaction.
 The type of currency for the transaction. Defaults to `USD`.
 
 **`invoice_id`: String**  
-The PayTheory unique identifier for the invoice the transaction is for.
+The Pay Theory unique identifier for the invoice the transaction is for.
 
 **`metadata`: JSON**  
 Custom defined JSON object to be stored with the transaction.
@@ -279,7 +279,7 @@ For more information on payment parameters check out the [Payment Parameters](pa
 The description of the transaction that will be displayed on the receipt.
 
 **`recurring_id`: String**  
-The PayTheory unique identifier for the recurring payment the transaction is for.
+The Pay Theory unique identifier for the recurring payment the transaction is for.
 If you pass in a recurring id, the transactions amount must be an interval of the recurring payments amount per payment.
 
 **`reference`: String**  
@@ -329,7 +329,7 @@ The amount of the service fee charged for the transaction. This will be 0 if the
 The type of currency for the transaction.
 
 **`transaction_id`: String**  
-The PayTheory unique identifier for the transaction.
+The Pay Theory unique identifier for the transaction.
 
 **`created_at`: DateTime**  
 The date and time the transaction was created.
@@ -364,7 +364,7 @@ This call will allow you to calculate what the fee amount should be if using `SE
 The amount of the transaction.
 
 **`merchant_uid`: String**  
-The PayTheory unique identifier for the merchant the transaction amount being calculated is for.
+The Pay Theory unique identifier for the merchant the transaction amount being calculated is for.
 
 **Returns**
 

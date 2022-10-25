@@ -1,6 +1,6 @@
 # Recurring Quick Start
 
-This guide will walk you through the steps to create a recurring payment in PayTheory. You will need to use both the PayTheory SDK and the PayTheory GraphQL API.
+This guide will walk you through the steps to create a recurring payment in Pay Theory. You will need to use both the Pay Theory SDK and the Pay Theory GraphQL API.
 
 ## Step 1: Create a Payment Method Token
 

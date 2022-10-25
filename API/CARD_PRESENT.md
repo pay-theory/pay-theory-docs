@@ -15,10 +15,10 @@ Card Present Devices are used to accept in person card payments with a device. I
 ```
 
 **`merchant_uid`: String**  
-The PayTheory unique identifier assigned to the merchant that the device belongs to.
+The Pay Theory unique identifier assigned to the merchant that the device belongs to.
 
 **`device_id`: String**  
-The unique id that represents the device in the PayTheory system.
+The unique id that represents the device in the Pay Theory system.
 
 **`device_name`: String**  
 The name of the type of device that is being used.
@@ -64,7 +64,7 @@ If the direction is `BACKWARD`, the offset is the first item in the previous lis
 The `device_id` of the offset item. If the direction is `FORWARD`, the offset item is the last item in the list. If the direction is `BACKWARD`, the offset is the first item in the list.
 
 **`query`: QueryObject**  
-The query to filter the devices with based on PayTheory defined data. Detailed information about the query object can be found [here](query).
+The query to filter the devices with based on Pay Theory defined data. Detailed information about the query object can be found [here](query).
 
 **Returns**
 
@@ -108,10 +108,10 @@ mutation {
 **Required Arguments**
 
 **`device_id`: String**  
-The unique id that represents the device in the PayTheory system.
+The unique id that represents the device in the Pay Theory system.
 
 **`merchant_uid`: String**  
-The PayTheory unique identifier assigned to the merchant that the device belongs to.
+The Pay Theory unique identifier assigned to the merchant that the device belongs to.
 
 **`device_description`: String**  
 Custom description of the device that can be used to identify the device.

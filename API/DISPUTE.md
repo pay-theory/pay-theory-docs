@@ -34,13 +34,13 @@ They could be an `INQUIRY` which is just a request for information, or an actual
 ```
 
 **`merchant`: String**  
-The PayTheory unique identifier assigned to the merchant that the dispute belongs to.
+The Pay Theory unique identifier assigned to the merchant that the dispute belongs to.
 
 **`transaction_id`: String**  
 The unique transaction identifier of the charge that is being disputed.
 
 **`dispute_id`: String**  
-The PayTheory unique dispute identifier.
+The Pay Theory unique dispute identifier.
 
 **`status`: Status**  
 The status of the dispute.

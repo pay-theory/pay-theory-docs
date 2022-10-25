@@ -92,7 +92,7 @@ The only required key is `amount`.
 
 
 - `feeMode`: (String)
-  - Defaults to `window.paytheory.INTERCHANGE`. If available to merchant and set to `window.paytheory.SERVICE_FEE` the fee will be added to the amount and charged to the payor. More details about the fee modes in your PayTheory Portal.
+  - Defaults to `window.paytheory.INTERCHANGE`. If available to merchant and set to `window.paytheory.SERVICE_FEE` the fee will be added to the amount and charged to the payor. More details about the fee modes in your Pay Theory Portal.
 
 
 - `fee`: (Int)
@@ -105,11 +105,11 @@ The only required key is `amount`.
 
 
 - `accountCode`: (String)
-  - Code that can be used to track a payment or group of payments. Will be included in the transaction schema and in the PayTheory Portal.
+  - Code that can be used to track a payment or group of payments. Will be included in the transaction schema and in the Pay Theory Portal.
 
 
 - `reference`: (String)
-  - Custom description assigned to a payment. Will be included in the transaction schema and in the PayTheory Portal.
+  - Custom description assigned to a payment. Will be included in the transaction schema and in the Pay Theory Portal.
 
 
 - `paymentParameters`: (String)
@@ -118,16 +118,16 @@ The only required key is `amount`.
 
 
 - `payorId`: (String)
-  - The PayTheory payor ID to use for the payment. Allows for user to manage identities.
+  - The Pay Theory payor ID to use for the payment. Allows for user to manage identities.
   - This cannot be used if also using the `payorInfo` parameter.
 
 
 - `invoiceId`: (String)
-  - The PayTheory invoice ID to use for the payment. Allows for user to assign a payment to an invoice.
+  - The Pay Theory invoice ID to use for the payment. Allows for user to assign a payment to an invoice.
 
 
 - `recurringId`: (String)
-  - The PayTheory recurring ID to use for the payment. Allows for user to assign a payment to a recurring payment.
+  - The Pay Theory recurring ID to use for the payment. Allows for user to assign a payment to a recurring payment.
   - If you pass in a recurring ID, the transactions amount must be an interval of the recurring payments amount per payment.
 
 
@@ -207,7 +207,7 @@ These are the values that you can pass into the `tokenizePaymentMethod` function
 - `metadata`: (Object)
   - An object that will be stored with the token and can be used to track the token.
 - `payorId`: (String)
-  - The PayTheory payor ID to use for the payment. Allows for user to manage identities.
+  - The Pay Theory payor ID to use for the payment. Allows for user to manage identities.
   - This cannot be used if also using the `payorInfo` parameter.
 
 Once the `tokenizePaymentMethod` function is called, you will receive a response from the `transactedObserver` function.
@@ -279,7 +279,7 @@ The only required key is `amount`.
 
 
 - `feeMode`: (String)
-  - Defaults to `window.paytheory.INTERCHANGE`. If available to merchant and set to `window.paytheory.SERVICE_FEE` the fee will be added to the amount and charged to the payor. More details about the fee modes in your PayTheory Portal.
+  - Defaults to `window.paytheory.INTERCHANGE`. If available to merchant and set to `window.paytheory.SERVICE_FEE` the fee will be added to the amount and charged to the payor. More details about the fee modes in your Pay Theory Portal.
 
 
 - `fee`: (Int)
@@ -292,11 +292,11 @@ The only required key is `amount`.
 
 
 - `accountCode`: (String)
-  - Code that can be used to track a payment or group of payments. Will be included in the transaction schema and in the PayTheory Portal.
+  - Code that can be used to track a payment or group of payments. Will be included in the transaction schema and in the Pay Theory Portal.
 
 
 - `reference`: (String)
-  - Custom description assigned to a payment. Will be included in the transaction schema and in the PayTheory Portal.
+  - Custom description assigned to a payment. Will be included in the transaction schema and in the Pay Theory Portal.
 
 
 - `paymentParameters`: (String)
@@ -305,16 +305,16 @@ The only required key is `amount`.
 
 
 - `payorId`: (String)
-  - The PayTheory payor ID to use for the payment. Allows for user to manage identities.
+  - The Pay Theory payor ID to use for the payment. Allows for user to manage identities.
   - This cannot be used if also using the `payorInfo` parameter.
 
 
 - `invoiceId`: (String)
-  - The PayTheory invoice ID to use for the payment. Allows for user to assign a payment to an invoice.
+  - The Pay Theory invoice ID to use for the payment. Allows for user to assign a payment to an invoice.
 
 
 - `recurringId`: (String)
-  - The PayTheory recurring ID to use for the payment. Allows for user to assign a payment to a recurring payment.
+  - The Pay Theory recurring ID to use for the payment. Allows for user to assign a payment to a recurring payment.
   - If you pass in a recurring ID, the transactions amount must be an interval of the recurring payments amount per payment.
 
 
@@ -331,7 +331,7 @@ Once the function is called you should receive a response to the `cardPresentObs
 
 ## Payor Info Object
 
-This data will be used to create a payor in PayTheory system that will be represented by a Payor ID.
+This data will be used to create a payor in Pay Theory system that will be represented by a Payor ID.
 
 - **first_name**: (String) The first name of the payor
 - **last_name**: (String) The last name of the payor

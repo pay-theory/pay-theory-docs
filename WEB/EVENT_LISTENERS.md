@@ -22,7 +22,7 @@ When the fields are ready it will pass a boolean value of `true` to the callback
 
 ## errorObserver
 
-The `errorObserver` will fire when an error occurs anywhere inside the PayTheory SDK. This is a good place to add any logic that should only be executed when an error occurs.
+The `errorObserver` will fire when an error occurs anywhere inside the Pay Theory SDK. This is a good place to add any logic that should only be executed when an error occurs.
 
 ```javascript
 myPayTheory.errorObserver(error => {
@@ -65,7 +65,7 @@ You will be passed back an object with the following properties:
 - **last_four**: (String) The last four digits of the card number or account number
 - **amount** (Int): The amount of the transaction
 - **service_fee** (Int): The service fee of the transaction
-- **receipt_number** (String): The PayTheory receipt number
+- **receipt_number** (String): The Pay Theory receipt number
 
 
 ## captureObserver
@@ -89,17 +89,17 @@ A successful capture will return the following properties:
 - **last_four** (String): The last four digits of the card number or account number
 - **amount** (Int): The amount of the transaction
 - **service_fee** (Int): The service fee of the transaction
-- **receipt_number** (String): The PayTheory receipt number
+- **receipt_number** (String): The Pay Theory receipt number
 - **brand** (String): The brand of the card
 - **created_at** (String): The date and time the transaction was created
 - **state** (String): The status of the transaction
 - **metadata** (JSON): The metadata of the transaction
-- **payor_id** (String): The PayTheory id for the payor that was used for the transaction
-- **payment_method_id** (String): The PayTheory id for the payment method token
+- **payor_id** (String): The Pay Theory id for the payor that was used for the transaction
+- **payment_method_id** (String): The Pay Theory id for the payment method token
 
 If a failure or decline occurs during the payment, the response will be similar to the following:
 
-- **receipt_number** (String): The PayTheory receipt number
+- **receipt_number** (String): The Pay Theory receipt number
 - **last_four** (String): The last four digits of the card number or account number
 - **brand** (String): The brand of the card
 - **state** (String): The state of the transaction
@@ -127,17 +127,17 @@ A successful capture will return the following properties:
 - **last_four** (String): The last four digits of the card number or account number
 - **amount** (Int): The amount of the transaction
 - **service_fee** (Int): The service fee of the transaction
-- **receipt_number** (String): The PayTheory receipt number
+- **receipt_number** (String): The Pay Theory receipt number
 - **brand** (String): The brand of the card
 - **created_at** (String): The date and time the transaction was created
 - **state** (String): The status of the transaction
 - **metadata** (JSON): The metadata of the transaction
-- **payor_id** (String): The PayTheory id for the payor that was used for the transaction
-- **payment_method_id** (String): The PayTheory id for the payment method token
+- **payor_id** (String): The Pay Theory id for the payor that was used for the transaction
+- **payment_method_id** (String): The Pay Theory id for the payment method token
 
 If a failure or decline occurs during the payment, the response will be similar to the following:
 
-- **receipt_number** (String): The PayTheory receipt number
+- **receipt_number** (String): The Pay Theory receipt number
 - **last_four** (String): The last four digits of the card number or account number
 - **brand** (String): The brand of the card
 - **state** (String): The state of the transaction
@@ -146,8 +146,8 @@ If a failure or decline occurs during the payment, the response will be similar 
 
 If you called the `tokenizePaymentMethod` function you will be passed back an object with the following properties:
 
-- **payment_method_id** (String): The PayTheory id for the payment method token
-- **payor_id** (String): The PayTheory id for the payor that was used for the payment method token
+- **payment_method_id** (String): The Pay Theory id for the payment method token
+- **payor_id** (String): The Pay Theory id for the payor that was used for the payment method token
 - **last_four** (String): The last four digits of the card number or account number
 - **brand** (String): The brand of the card
 - **expiration** (String): The expiration date of the card formatted as MMYY
@@ -214,7 +214,7 @@ You will be passed back an object with the following properties:
 - **last_four** (String): The last four digits of the card number
 - **service_fee** (Int): The service fee of the transaction
 - **currency** (String): The currency of the transaction
-- **transaction_id** (String): The PayTheory transaction id
+- **transaction_id** (String): The Pay Theory transaction id
 - **created_at** (String): The date and time the transaction was created
 - **failure_reason** [String]: The reason for the failure
   - This will only be returned if the transaction failed

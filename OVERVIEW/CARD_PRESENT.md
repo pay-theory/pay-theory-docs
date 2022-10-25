@@ -35,9 +35,9 @@ You will need to know the device ID of the device you want to activate. You can 
 }
 ```
 
-## Step 2: Set Up PayTheory Web SDK
+## Step 2: Set Up Pay Theory Web SDK
 
-Once you have the device ID you need to set up the PayTheory Web SDK.
+Once you have the device ID you need to set up the Pay Theory Web SDK.
 
 ```javascript
 let payTheory = window.paytheory

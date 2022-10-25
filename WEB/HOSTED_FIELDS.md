@@ -81,7 +81,7 @@ These fields are all required to collect Cash information from the user.
 
 ## Card Present Field
 
-This div is used to mount an iframe that will allow the SDK to communicate to PayTheory.
+This div is used to mount an iframe that will allow the SDK to communicate to Pay Theory.
 
 This div is required for card present to work but is not shown and is set to `display: none` by default.
 

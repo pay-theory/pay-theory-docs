@@ -18,7 +18,7 @@ myPayTheory.stateObserver(state => {
 
 ### Callback Argument
 
-The callback will be passed a state object. The state object will include an object with all the possible fields that can be used with the PayTheory SDK and consist of 3 pieces of information.
+The callback will be passed a state object. The state object will include an object with all the possible fields that can be used with the Pay Theory SDK and consist of 3 pieces of information.
 - **isFocused**: boolean indicating if the field is focused
 - **isDirty**: boolean indicating if the field currently has text entered
 - **errorMessages**: array of error messages if the field is invalid

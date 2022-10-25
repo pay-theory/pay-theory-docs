@@ -36,10 +36,10 @@ You can also create a recurring payment with no set payment amounts to enable a 
 ```
 
 **`recurring_id`: String**  
-The PayTheory unique identifier assigned to the recurring payment.
+The Pay Theory unique identifier assigned to the recurring payment.
 
 **`merchant_uid`: String**  
-The PayTheory unique identifier assigned to the merchant that the recurring payment belongs to.
+The Pay Theory unique identifier assigned to the merchant that the recurring payment belongs to.
 
 **`payor`: Payor**  
 The payor that the recurring payment belongs to. Refer to the [Payor](payor) for more info.
@@ -175,7 +175,7 @@ If the direction is `BACKWARD`, the offset is the first item in the previous lis
 The `recurring_id` of the offset item. If the direction is `FORWARD`, the offset item is the last item in the list. If the direction is `BACKWARD`, the offset is the first item in the list.
 
 **`query`: QueryObject**  
-The query to filter the recurring payments with based on PayTheory defined data.  Detailed information about the query object can be found [here](query).
+The query to filter the recurring payments with based on Pay Theory defined data.  Detailed information about the query object can be found [here](query).
 
 **Nested Arguments**
 
@@ -272,7 +272,7 @@ This object contains all the details needed to create a recurring payment.
 **Required Arguments**
 
 **`merchant_uid`: String**  
-The PayTheory merchant unique identifier for the merchant that is creating the recurring payment.
+The Pay Theory merchant unique identifier for the merchant that is creating the recurring payment.
 
 **`amount`: Int**  
 The amount of the recurring payment.
@@ -290,7 +290,7 @@ The interval of the recurring payment. The following intervals are available:
 The `payment_method_id` of the tokenized payment method that will be used for the recurring payment.
 
 **`recurrring_name`: String**  
-Custom name for the recurring payment. This is used to identify the recurring payment in customer emails and the PayTheory dashboard.
+Custom name for the recurring payment. This is used to identify the recurring payment in customer emails and the Pay Theory dashboard.
 
 You need one of the following two variables:  
 
