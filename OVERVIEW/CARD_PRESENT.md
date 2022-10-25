@@ -1,6 +1,8 @@
 # Card Present Quick Start
 
-This guide will walk you through the steps to activate a card present device to accept in person card payments with a device.
+This guide will walk you through the steps to activate a card present device to accept in person card payments with a device.  
+
+If you are looking to accept card present payments with a device please reach out to [support@paytheory.com](mailto:support@paytheory.com) to get started.
 
 ## Step 1: Find the Device ID
 
