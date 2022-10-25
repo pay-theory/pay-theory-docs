@@ -6,7 +6,7 @@ These functions are available on the object returned by the `create` function.
 
 ## create
 
-The `create` function is used to initialize the Pay Theory object. This function takes two arguments, the API key and the [styles object](hosted_fields#stylying-hosted-fields).
+The `create` function is used to initialize the Pay Theory object. This function takes two arguments, the API key and the [styles object](hosted_fields#styling-hosted-fields).
 
 ```javascript
 const API_KEY = "YOUR_API_KEY"
