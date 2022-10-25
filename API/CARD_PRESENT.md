@@ -1,6 +1,6 @@
 # Card Present Device
 
-Card Present Devices 
+Card Present Devices are used to accept in person card payments with a device. If you are looking to accept card present payments with a device please reach out to [support@paytheory.com](mailto:support@paytheory.com)
 
 ## The Device Object
 
