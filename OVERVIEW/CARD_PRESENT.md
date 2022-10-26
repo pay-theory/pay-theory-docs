@@ -89,7 +89,7 @@ const CARD_PRESENT_PARAMS = {
 ptObject.activateCardPresentDevice(CARD_PRESENT_PARAMS)
 ```
 
-## Step 4: Handle responses In the `cardPresentObserver`
+## Step 4: Handle responses In the cardPresentObserver
 
 You should receive two responses after calling the `activateCardPresentDevice` function.  
 

@@ -1,4 +1,4 @@
-# Pay Theory Apple SDK
+# Pay Theory Javascript SDK
 
 This is the Pay Theory Web SDK. It is a collection of hosted fields, event listeners, and functions to help you integrate Pay Theory into your webpage.
 
@@ -138,6 +138,6 @@ const TRANSACTING_PARAMETERS = {
 myPayTheory.transact(TRANSACTING_PARAMETERS)
 ```
 
-## Step 5: Handle the Result In the `transactedObserver`
+## Step 5: Handle the Result In the transactedObserver
 
 Once a payment completes the `transactedObserver` will be called with the result of the transaction. You can then handle the result as you see fit.
