@@ -335,6 +335,54 @@ The Pay Theory unique identifier for the transaction.
 The date and time the transaction was created.
 
 
+## Create Refund
+
+This call will create a refund for a transaction.
+
+```js
+mutation {
+  createRefund( amount: Int, 
+                refund_reason: { 
+                                reason_code: RefundReasonCode, 
+                                reason_details: String
+                                }, 
+                transaction_id: String, 
+                refund_email: String
+                )
+}
+```
+
+**Arguments**
+
+**Required Arguments**
+
+**`amount`: Int**
+The amount of the refund. This must be less than or equal to the amount of the transaction.
+
+**`refund_reason`: RefundReason**
+The reason for the refund. This is required for all refunds and is made up of the following.
+
+- **`reason_code`: RefundReasonCode**
+  - The reason code for the refund. Options are:
+    - `DUPLICATE`
+    - `FRAUDULENT`
+    - `REQUESTED_BY_CUSTOMER`
+    - `OTHER`
+- **`reason_details`: String** (optional)
+  - Additional details about the reason for the refund. 
+
+**`transaction_id`: String**
+The Pay Theory unique identifier for the transaction to refund.
+
+**Optional Arguments**
+
+**`refund_email`: String**
+The email address to send the refund receipt to. If not provided an email will not be sent out.
+
+**Returns**
+
+The call will return a boolean `true` if the refund was created successfully or errors if it fails.
+
 ## Calculate Service Fee Amount
 
 This call will allow you to calculate what the fee amount should be if using `SERVICE_FEE` for a transaction.
