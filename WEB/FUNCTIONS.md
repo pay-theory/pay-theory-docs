@@ -213,120 +213,198 @@ These are the values that you can pass into the `tokenizePaymentMethod` function
 Once the `tokenizePaymentMethod` function is called, you will receive a response from the `transactedObserver` function.
 
 
-## activateCardPresentDevice
+[//]: # (## activateCardPresentDevice)
 
-This function is used to activate a card present device and accept a payment.
+[//]: # ()
+[//]: # (This function is used to activate a card present device and accept a payment.)
 
-```javascript
-//Amount passed in is in cents
-const AMOUNT = 1000
+[//]: # ()
+[//]: # (```javascript)
 
-// optionally provide details about the payor
-const PAYOR_INFO = {
-  "first_name": "Some",
-  "last_name": "Body",
-  "email": "somebody@gmail.com",
-  "phone": "3335554444",
-  "personal_address": {
-    "city": "Somewhere",
-    "country": "USA",
-    "region": "OH",
-    "line1": "123 Street St",
-    "line2": "Apartment 17",
-    "postal_code": "12345"
-  }
-}
+[//]: # (//Amount passed in is in cents)
 
-const PAYMENT_METADATA = {
-  "student-name": "Jane Doe"
-};
+[//]: # (const AMOUNT = 1000)
 
-// Parameters that you will pass into the transact function. More details below.
-const CARD_PRESENT_PARAMS = { 
-        amount: AMOUNT, 
-        deviceId: "pt_dev_XXXXXXXXX",
-        payorInfo: PAYOR_INFO, // optional
-        payorId: "pt_pay_XXXXXXXXX", // optional
-        metadata: PAYMENT_METADATA, // optional 
-        feeMode: FEE_MODE, // optional
-        fee: 100, // optional
-        confirmation: false, // optional 
-        accountCode: "code-123456789", // optional 
-        reference: "field-trip", // optional
-        paymentParameters: "expires-in-30-days", // optional
-        invoiceId: "pt_inv_XXXXXXXXX", // optional
-        sendReceipt: true, // optional 
-        receiptDescription: "School Technology Fees" // optional
-        recurringId: "pt_rec_XXXXXXXXX", // optional
-}
+[//]: # ()
+[//]: # (// optionally provide details about the payor)
 
-myPayTheory.activateCardPresentDevice(CARD_PRESENT_PARAMS)
-```
+[//]: # (const PAYOR_INFO = {)
 
-These are the values that you can pass into the `transact` function to customize the payment.  
-The only required key is `amount`.
+[//]: # (  "first_name": "Some",)
 
-- `amount`: (Int)
-  - represents the amount to be charged in cents
+[//]: # (  "last_name": "Body",)
 
+[//]: # (  "email": "somebody@gmail.com",)
 
-- `payorInfo`: (Object)
-  - see the [Payor Info object](#payor-info-object) below for details
+[//]: # (  "phone": "3335554444",)
 
+[//]: # (  "personal_address": {)
 
-- `metadata`: (Object)
-  - An object that will be stored with the transaction and can be used to track the payment.
+[//]: # (    "city": "Somewhere",)
 
+[//]: # (    "country": "USA",)
 
-- `feeMode`: (String)
-  - Defaults to `window.paytheory.INTERCHANGE`. If available to merchant and set to `window.paytheory.SERVICE_FEE` the fee will be added to the amount and charged to the payor. More details about the fee modes in your Pay Theory Portal.
+[//]: # (    "region": "OH",)
 
+[//]: # (    "line1": "123 Street St",)
 
-- `fee`: (Int)
-  - Represents the fee to be charged in cents.
-  - If you are using `SERVICE_FEE` mode and want to skip the confirmation step, you must provide the fee amount. This will be validated to make sure it matches the fee amount that would be charged. If the fee amount does not match, an error will be thrown.
+[//]: # (    "line2": "Apartment 17",)
 
+[//]: # (    "postal_code": "12345")
 
-- `confirmation`: (Boolean)
-  - Defaults to `false`. If set to `true` the payment will return a response to the tokenizeObserver before it needs to be confirmed. Required if using `SERVICE_FEE` fee mode.
+[//]: # (  })
 
+[//]: # (})
 
-- `accountCode`: (String)
-  - Code that can be used to track a payment or group of payments. Will be included in the transaction schema and in the Pay Theory Portal.
+[//]: # ()
+[//]: # (const PAYMENT_METADATA = {)
 
+[//]: # (  "student-name": "Jane Doe")
 
-- `reference`: (String)
-  - Custom description assigned to a payment. Will be included in the transaction schema and in the Pay Theory Portal.
+[//]: # (};)
 
+[//]: # ()
+[//]: # (// Parameters that you will pass into the transact function. More details below.)
 
-- `paymentParameters`: (String)
-  - The payment parameters to use for the payment.
-  - For more information on payment parameters check out the [Payment Parameters](/overview/payment_parameters) documentation.
+[//]: # (const CARD_PRESENT_PARAMS = { )
 
+[//]: # (        amount: AMOUNT, )
 
-- `payorId`: (String)
-  - The Pay Theory payor ID to use for the payment. Allows for user to manage identities.
-  - This cannot be used if also using the `payorInfo` parameter.
+[//]: # (        deviceId: "pt_dev_XXXXXXXXX",)
 
+[//]: # (        payorInfo: PAYOR_INFO, // optional)
 
-- `invoiceId`: (String)
-  - The Pay Theory invoice ID to use for the payment. Allows for user to assign a payment to an invoice.
+[//]: # (        payorId: "pt_pay_XXXXXXXXX", // optional)
 
+[//]: # (        metadata: PAYMENT_METADATA, // optional )
 
-- `recurringId`: (String)
-  - The Pay Theory recurring ID to use for the payment. Allows for user to assign a payment to a recurring payment.
-  - If you pass in a recurring ID, the transactions amount must be an interval of the recurring payments amount per payment.
+[//]: # (        feeMode: FEE_MODE, // optional)
 
+[//]: # (        fee: 100, // optional)
 
-- `sendReceipt`: (Boolean)
-  - Pass `true` to send a receipt to the payor. Must have an email address on the payorInfo object or pass in a payorId that has an email address tied to it.
+[//]: # (        confirmation: false, // optional )
 
+[//]: # (        accountCode: "code-123456789", // optional )
 
-- `receiptDescription`: (String)
-  - Description to be included in the receipt. Defaults to "Payment from {merchant name}".
-  - For more info on receipts check out the [Receipts](/overview/email_receipts) documentation.
+[//]: # (        reference: "field-trip", // optional)
 
-Once the function is called you should receive a response to the `cardPresentObserver`.
+[//]: # (        paymentParameters: "expires-in-30-days", // optional)
+
+[//]: # (        invoiceId: "pt_inv_XXXXXXXXX", // optional)
+
+[//]: # (        sendReceipt: true, // optional )
+
+[//]: # (        receiptDescription: "School Technology Fees" // optional)
+
+[//]: # (        recurringId: "pt_rec_XXXXXXXXX", // optional)
+
+[//]: # (})
+
+[//]: # ()
+[//]: # (myPayTheory.activateCardPresentDevice&#40;CARD_PRESENT_PARAMS&#41;)
+
+[//]: # (```)
+
+[//]: # ()
+[//]: # (These are the values that you can pass into the `transact` function to customize the payment.  )
+
+[//]: # (The only required key is `amount`.)
+
+[//]: # ()
+[//]: # (- `amount`: &#40;Int&#41;)
+
+[//]: # (  - represents the amount to be charged in cents)
+
+[//]: # ()
+[//]: # ()
+[//]: # (- `payorInfo`: &#40;Object&#41;)
+
+[//]: # (  - see the [Payor Info object]&#40;#payor-info-object&#41; below for details)
+
+[//]: # ()
+[//]: # ()
+[//]: # (- `metadata`: &#40;Object&#41;)
+
+[//]: # (  - An object that will be stored with the transaction and can be used to track the payment.)
+
+[//]: # ()
+[//]: # ()
+[//]: # (- `feeMode`: &#40;String&#41;)
+
+[//]: # (  - Defaults to `window.paytheory.INTERCHANGE`. If available to merchant and set to `window.paytheory.SERVICE_FEE` the fee will be added to the amount and charged to the payor. More details about the fee modes in your Pay Theory Portal.)
+
+[//]: # ()
+[//]: # ()
+[//]: # (- `fee`: &#40;Int&#41;)
+
+[//]: # (  - Represents the fee to be charged in cents.)
+
+[//]: # (  - If you are using `SERVICE_FEE` mode and want to skip the confirmation step, you must provide the fee amount. This will be validated to make sure it matches the fee amount that would be charged. If the fee amount does not match, an error will be thrown.)
+
+[//]: # ()
+[//]: # ()
+[//]: # (- `confirmation`: &#40;Boolean&#41;)
+
+[//]: # (  - Defaults to `false`. If set to `true` the payment will return a response to the tokenizeObserver before it needs to be confirmed. Required if using `SERVICE_FEE` fee mode.)
+
+[//]: # ()
+[//]: # ()
+[//]: # (- `accountCode`: &#40;String&#41;)
+
+[//]: # (  - Code that can be used to track a payment or group of payments. Will be included in the transaction schema and in the Pay Theory Portal.)
+
+[//]: # ()
+[//]: # ()
+[//]: # (- `reference`: &#40;String&#41;)
+
+[//]: # (  - Custom description assigned to a payment. Will be included in the transaction schema and in the Pay Theory Portal.)
+
+[//]: # ()
+[//]: # ()
+[//]: # (- `paymentParameters`: &#40;String&#41;)
+
+[//]: # (  - The payment parameters to use for the payment.)
+
+[//]: # (  - For more information on payment parameters check out the [Payment Parameters]&#40;/overview/payment_parameters&#41; documentation.)
+
+[//]: # ()
+[//]: # ()
+[//]: # (- `payorId`: &#40;String&#41;)
+
+[//]: # (  - The Pay Theory payor ID to use for the payment. Allows for user to manage identities.)
+
+[//]: # (  - This cannot be used if also using the `payorInfo` parameter.)
+
+[//]: # ()
+[//]: # ()
+[//]: # (- `invoiceId`: &#40;String&#41;)
+
+[//]: # (  - The Pay Theory invoice ID to use for the payment. Allows for user to assign a payment to an invoice.)
+
+[//]: # ()
+[//]: # ()
+[//]: # (- `recurringId`: &#40;String&#41;)
+
+[//]: # (  - The Pay Theory recurring ID to use for the payment. Allows for user to assign a payment to a recurring payment.)
+
+[//]: # (  - If you pass in a recurring ID, the transactions amount must be an interval of the recurring payments amount per payment.)
+
+[//]: # ()
+[//]: # ()
+[//]: # (- `sendReceipt`: &#40;Boolean&#41;)
+
+[//]: # (  - Pass `true` to send a receipt to the payor. Must have an email address on the payorInfo object or pass in a payorId that has an email address tied to it.)
+
+[//]: # ()
+[//]: # ()
+[//]: # (- `receiptDescription`: &#40;String&#41;)
+
+[//]: # (  - Description to be included in the receipt. Defaults to "Payment from {merchant name}".)
+
+[//]: # (  - For more info on receipts check out the [Receipts]&#40;/overview/email_receipts&#41; documentation.)
+
+[//]: # ()
+[//]: # (Once the function is called you should receive a response to the `cardPresentObserver`.)
 
 
 ## Payor Info Object
