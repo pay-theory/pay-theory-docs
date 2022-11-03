@@ -179,42 +179,70 @@ You will be passed back an object with the following properties:
 - **barcodeUrl** (String): The url for the barcode image
 - **mapUrl** (String): The url for the map to find retail locations to pay the barcode
 
-## cardPresentObserver
+[//]: # (## cardPresentObserver)
 
-The `cardPresentObserver` will fire with responses for the card present flow. You will receive a message when the fields are ready, when the terminal is active, and when the terminal is complete with the transaction.
+[//]: # ()
+[//]: # (The `cardPresentObserver` will fire with responses for the card present flow. You will receive a message when the fields are ready, when the terminal is active, and when the terminal is complete with the transaction.)
 
-```javascript
-myPayTheory.cardPresentObserver(result => {
-    // Logic to respond when you receive the card present message
-})
-```
+[//]: # ()
+[//]: # (```javascript)
 
-### Callback Argument
+[//]: # (myPayTheory.cardPresentObserver&#40;result => {)
 
-You will be passed back an object with the following properties:
+[//]: # (    // Logic to respond when you receive the card present message)
 
-**status** (String): The status of the card present flow
-- `READY` - The hosted element is ready to activate the terminal
-- `ACTIVATED` - The terminal has been activated and is ready to accept a card
-- `COMPLETE` - The terminal has completed the interaction
+[//]: # (}&#41;)
 
-**details**: The details that come with a card present status
+[//]: # (```)
 
-`READY` - Nothing will be returned
+[//]: # ()
+[//]: # (### Callback Argument)
 
-`ACTIVATED` - String of the `transaction_id`
+[//]: # ()
+[//]: # (You will be passed back an object with the following properties:)
 
-`COMPLETE` - The details of the transaction as follows:
+[//]: # ()
+[//]: # (**status** &#40;String&#41;: The status of the card present flow)
 
-- **status** (String): The status of the transaction
-  - `PENDING` or `SUCCEEDED` - The transaction was successful
-  - `FAILURE` - The transaction failed or the connection was aborted or timed out
-- **amount** (Int): The amount of the transaction
-- **card_brand** (String): The brand of the card
-- **last_four** (String): The last four digits of the card number
-- **service_fee** (Int): The service fee of the transaction
-- **currency** (String): The currency of the transaction
-- **transaction_id** (String): The Pay Theory transaction id
-- **created_at** (String): The date and time the transaction was created
-- **failure_reason** [String]: The reason for the failure
-  - This will only be returned if the transaction failed
+[//]: # (- `READY` - The hosted element is ready to activate the terminal)
+
+[//]: # (- `ACTIVATED` - The terminal has been activated and is ready to accept a card)
+
+[//]: # (- `COMPLETE` - The terminal has completed the interaction)
+
+[//]: # ()
+[//]: # (**details**: The details that come with a card present status)
+
+[//]: # ()
+[//]: # (`READY` - Nothing will be returned)
+
+[//]: # ()
+[//]: # (`ACTIVATED` - String of the `transaction_id`)
+
+[//]: # ()
+[//]: # (`COMPLETE` - The details of the transaction as follows:)
+
+[//]: # ()
+[//]: # (- **status** &#40;String&#41;: The status of the transaction)
+
+[//]: # (  - `PENDING` or `SUCCEEDED` - The transaction was successful)
+
+[//]: # (  - `FAILURE` - The transaction failed or the connection was aborted or timed out)
+
+[//]: # (- **amount** &#40;Int&#41;: The amount of the transaction)
+
+[//]: # (- **card_brand** &#40;String&#41;: The brand of the card)
+
+[//]: # (- **last_four** &#40;String&#41;: The last four digits of the card number)
+
+[//]: # (- **service_fee** &#40;Int&#41;: The service fee of the transaction)
+
+[//]: # (- **currency** &#40;String&#41;: The currency of the transaction)
+
+[//]: # (- **transaction_id** &#40;String&#41;: The Pay Theory transaction id)
+
+[//]: # (- **created_at** &#40;String&#41;: The date and time the transaction was created)
+
+[//]: # (- **failure_reason** [String]: The reason for the failure)
+
+[//]: # (  - This will only be returned if the transaction failed)
