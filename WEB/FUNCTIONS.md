@@ -21,11 +21,41 @@ This function returns a promise that resolves to the Pay Theory object containin
 
 ## mount
 
-The `mount` function is used to mount the Hosted Fields to the DOM. This function takes no arguments.
+The `mount` function is used to mount the Hosted Fields to the DOM. This function takes an object as an argument.
 
 ```javascript
-myPayTheory.mount()
+const customPlaceholders = {
+    "card-number": "Card Number",
+    "card-cvv": "CVV",
+    "card-exp": "MM/YY"
+}
+
+myPayTheory.mount({
+    placeholders: customPlaceholders
+})
 ```
+
+In the object you can pass in the following properties:
+
+- **placeholders**: An object that contains any custom placeholders you would like to use for the fields. These keys can be used to customize the placeholders for the following fields:
+    - **card-number**
+    - **card-cvv**
+    - **card-exp**
+    - **card-name**
+    - **billing-line1**
+    - **billing-line2**
+    - **billing-city**
+    - **billing-state**
+    - **billing-zip**
+    - **routing-number**
+    - **account-number**
+    - **account-name**
+    - **cash-name**
+    - **cash-contact**
+  
+  *Use these values to customize the labels for the Account Type radio button*
+    - **checking**
+    - **savings** 
 
 ## transact
 
