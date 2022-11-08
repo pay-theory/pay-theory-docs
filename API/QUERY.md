@@ -1,6 +1,6 @@
 # Query
 
-Here we will detail how you can build your own queries to pass into the PayTheory API.
+Here we will detail how you can build your own queries to pass into the Pay Theory API.
 
 First let's look at a basic query object, then we can break down its parts.
 

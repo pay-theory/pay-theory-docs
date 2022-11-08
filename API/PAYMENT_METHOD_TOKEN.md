@@ -27,7 +27,7 @@ Payment Method Tokens are meant to store info that represents a tokenized Bank A
 The unique payment method id.
 
 **`merchant_uid`: String**  
-The PayTheory unique identifier assigned to the merchant that the payment_method_token belongs to.
+The Pay Theory unique identifier assigned to the merchant that the payment_method_token belongs to.
 
 **`payor`: PayorObject**
 The payor object. Refer to the [Payor](payor) docs for more info.
@@ -115,12 +115,12 @@ If the direction is `BACKWARD`, the offset is the first item in the previous lis
 The `payment_method_id` of the offset item. If the direction is `FORWARD`, the offset item is the last item in the list. If the direction is `BACKWARD`, the offset is the first item in the list.
 
 **`query`: QueryObject**  
-The query to filter the payment_method_tokens with based on PayTheory defined data.  Detailed information about the query object can be found [here](query).
+The query to filter the payment_method_tokens with based on Pay Theory defined data.  Detailed information about the query object can be found [here](query).
 
 ### Nested Arguments
 #### Payor
 **`query_list`: QueryPair[]**
-The query list to filter the payment_method_tokens with based on PayTheory defined data. This will ensure that only return payment_method_tokens that match this query. Detailed information about the query list can be found [here](query).
+The query list to filter the payment_method_tokens with based on Pay Theory defined data. This will ensure that only return payment_method_tokens that match this query. Detailed information about the query list can be found [here](query).
 
 
 **Returns**

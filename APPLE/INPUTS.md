@@ -1,12 +1,12 @@
 # Input Views
 
-These SwiftUI views are used to collect payment information from the user. They are designed to be used with PayTheory Object to make payments and tokenize payment methods.
+These SwiftUI views are used to collect payment information from the user. They are designed to be used with a Pay Theory Object to make payments and tokenize payment methods.
 
 ## PTForm
 
 The PTForm view is used to wrap the inputs. It allows the inputs to talk to each other and validate the data.
 
-The PTForm needs to be passed the PayTheory object as an environment object.
+The PTForm needs to be passed the Pay Theory object as an environment object.
 
 As long as the PTForm wraps a higher level view containing the inputs, the inputs will be able to communicate with each other.
 

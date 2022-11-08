@@ -4,19 +4,19 @@ This is the Pay Theory Apple SDK. It is a collection of Swift UI inputs and util
 
 ## Importing the SDK
 
-To add PayTheory as dependency to your Xcode project, select `File` > `Add Packages...`, enter its repository URL: `https://github.com/pay-theory/pay-theory-ios.git` and import `PayTheory`.
+To add Pay Theory as dependency to your Xcode project, select `File` > `Add Packages...`, enter its repository URL: `https://github.com/pay-theory/pay-theory-ios.git` and import `PayTheory`.
 
 Then, to use it in your source code, add:
 
 ```swift
-import PayTheory
+import Pay Theory
 ```
 
-## Step 1: Initialize PayTheory Object
+## Step 1: Initialize Pay Theory Object
 
-To initialize the PayTheory object, you need to provide your API key. You can find this in the Pay Theory Merchant dashboard under `Settings`.
+To initialize the Pay Theory object, you need to provide your API key. You can find this in the Pay Theory Merchant dashboard under `Settings`.
 
-You also need to set your completion handler on `completion` value of the PayTheory object. This is where you will receive any responses from Pay Theory.
+You also need to set your completion handler on `completion` value of the Pay Theory object. This is where you will receive any responses from Pay Theory.
 
 *We recommend you set the completion handler in `onAppear`, `viewDidAppear`, or `viewWillAppear`.*
 
