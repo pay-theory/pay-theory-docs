@@ -1,6 +1,6 @@
 # Functions
 
-These are the functions available to you in the PayTheory SDK. These allow you to configure a payment or tokenize a payment method.
+These are the functions available to you in the Pay Theory SDK. These allow you to configure a payment or tokenize a payment method.
 
 These functions return a response via the Payable handlers you add to your Activity.
 

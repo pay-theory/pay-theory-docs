@@ -1,6 +1,6 @@
 # Pay Theory GraphQL API
 
-The PayTheory API is built to use [GraphQL](https://graphql.org/learn/). 
+The Pay Theory API is built to use [GraphQL](https://graphql.org/learn/). 
 
 GraphQL is a query language that was used to define the schema for our data set.
 
@@ -95,7 +95,7 @@ For a merchant or system, the key should have their merchant_uid followed by a s
 
 `Authorization: MERCHANT_UID;SECRET_KEY`
 
-**Note:** The secret key is not the same as the API key. You can find your secret key in the PayTheory Portal under the Settings tab. 
+**Note:** The secret key is not the same as the API key. You can find your secret key in the Pay Theory Portal under the Settings tab. 
 
 This key should be stored securely and not shared with anyone. It should be used server side, stored in an environment variable, and not embedded in your mobile applications or websites.
 

@@ -20,7 +20,7 @@ Payors are used to track payor info that can be tied to other data objects in Pa
 ```
 
 **`merchant_uid`: String**  
-The PayTheory unique identifier assigned to the merchant that the payor belongs to.
+The Pay Theory unique identifier assigned to the merchant that the payor belongs to.
 
 **`payor_id`: String**  
 The unique payor id.
@@ -94,7 +94,7 @@ If the direction is `BACKWARD`, the offset is the first item in the previous lis
 The `payor_id` of the offset item. If the direction is `FORWARD`, the offset item is the last item in the list. If the direction is `BACKWARD`, the offset is the first item in the list.
 
 **`query`: QueryObject**  
-The query to filter the payors with based on PayTheory defined data.  Detailed information about the query object can be found [here](query).
+The query to filter the payors with based on Pay Theory defined data.  Detailed information about the query object can be found [here](query).
 
 **Returns**
 
