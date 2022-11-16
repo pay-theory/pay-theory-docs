@@ -1,12 +1,12 @@
 # Recurring Quick Start
 
-This guide will walk you through the steps to create a recurring payment in PayTheory. You will need to use both the PayTheory SDK and the PayTheory GraphQL API.
+This guide will walk you through the steps to create a recurring payment in Pay Theory. You will need to use both the Pay Theory SDK and the Pay Theory GraphQL API.
 
 ## Step 1: Create a Payment Method Token
 
 You will need to have a payment method token to create a recurring payment. You can create a payment method token by using one of our SDKs and calling the tokenizePaymentMethod function:
 
-* [Web/JS](web#tokenize-payment-method-parameters)
+* [Web/JS](../web/functions#tokenizepaymentmethod)
 
 ```js
 const TOKENIZE_PAYMENT_METHOD_PARAMETERS = {
@@ -19,7 +19,7 @@ const TOKENIZE_PAYMENT_METHOD_PARAMETERS = {
 myPayTheory.tokenizePaymentMethod(TOKENIZE_PAYMENT_METHOD_PARAMETERS)
 ```
 
-* [Apple](apple/functions#tokenizepaymentmethod)
+* [Apple](../apple/functions#tokenizepaymentmethod)
 
 ```swift
 let payTheory = PayTheory(apiKey: "YOUR_API_KEY")
@@ -31,7 +31,7 @@ You also may already have a payment method token on file that you can use to cre
 
 ## Step 2: Call GraphQL API
 
-You will need to call the GraphQL API to create a recurring payment. This call is detailed in our [GraphQL API documentation](api/recurring#create-recurring-payment).
+You will need to call the GraphQL API to create a recurring payment. This call is detailed in our [GraphQL API documentation](../api/recurring#create-recurring-payment).
 
 ```graphql
 mutation {
@@ -88,11 +88,11 @@ In the call you can either pass in a payor_id if you already have a payor on fil
 
 You can manage your recurring payments using the GraphQL API. These calls are available to manage your recurring payments:
 
-* [Cancel Recurring Payment](api/recurring#cancel-recurring-payment)
+* [Cancel Recurring Payment](/api/recurring#cancel-recurring-payment)
   * Cancels a recurring payment. Once it is cancelled, it cannot be reactivated.
-* [Update Recurring Payment](api/recurring#update-recurring-payment)
+* [Update Recurring Payment](/api/recurring#update-recurring-payment)
   * Updates the payment method on the recurring payment. If you want to update any other fields, you will need to cancel the recurring payment and create a new one.
-* [Missed Recurring Payment Data](api/recurring#get-missed-recurring-payment-data)
+* [Missed Recurring Payment Data](/api/recurring#get-missed-recurring-payment-data)
   * Query how many payments have been missed and the total amount of those payments. This is useful if you want to charge a customer for all missed payments at once when updating their payment method.
-* [Retry Failed Recurring Paymenr](api/recurring#create-retry-for-failed-recurring-payment)
+* [Retry Failed Recurring Paymenr](/api/recurring#create-retry-for-failed-recurring-payment)
   * Retry a failed recurring payment. This should be used if the payment method on file is still valid, and you want to retry the payment.

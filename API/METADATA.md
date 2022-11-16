@@ -1,6 +1,6 @@
 # Metadata 
 
-Metadata is used to pass customer data to track items in PayTheory Systems.
+Metadata is used to pass customer data to track items in Pay Theory Systems.
 
 These calls allow you to update or delete metadata for an item you created with metadata.
 
@@ -18,7 +18,7 @@ mutation {
 The id of the item you want to update metadata for.
 
 **`merchant_uid`: String**  
-The PayTheory merchant_uid of the item you want to update metadata for.
+The Pay Theory merchant_uid of the item you want to update metadata for.
 
 **`metadata`: JSON**  
 The metadata you want to update the item with. Any keys passed in will overwrite the existing metadata.
@@ -47,7 +47,7 @@ mutation {
 The id of the item you want to delete metadata for.
 
 **`merchant_uid`: String**  
-The PayTheory merchant_uid of the item you want to delete metadata for.
+The Pay Theory merchant_uid of the item you want to delete metadata for.
 
 **`metadata_associate`: MetadataAssociate**  
 The type of item you want to delete metadata for. Options are:

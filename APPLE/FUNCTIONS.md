@@ -2,7 +2,7 @@
 
 These are the functions available to you in the PayTheory SDK. These allow you to use the data collected by the inputs to create a payment or tokenize a payment method.
 
-These functions will return a response to the completion handler you set on the `PayTheory` object. More info on the completion handler can be found [here]().
+These functions will return a response to the completion handler you set on the `PayTheory` object. More info on the completion handler can be found [here](/apple/completion_handler).
 
 ## transact
 
@@ -57,7 +57,7 @@ let payor = Payor(
 
 * **paymentParameters**: String
     * The payment parameters to use for the payment.
-    * For more information on payment parameters check out the [Payment Parameters](payment-parameters) documentation.
+    * For more information on payment parameters check out the [Payment Parameters](/overview/payment_parameters) documentation.
 
 
 * **invoiceId**: String
@@ -75,7 +75,7 @@ let payor = Payor(
 
 * **receiptDescription**: String
     * Description to be included in the receipt. Defaults to "Payment from {merchant name}".
-    * For more info on receipts check out the [Receipts](email-receipts) documentation.
+    * For more info on receipts check out the [Receipts](/overview/email_receipts) documentation.
 
 
 * **confirmation**: Boolean

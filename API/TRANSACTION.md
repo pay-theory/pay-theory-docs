@@ -33,7 +33,7 @@ Transactions are a data object that can represent a payment, failed or successfu
 ```
 
 **`merchant_uid`: String**  
-The PayTheory unique identifier assigned to the merchant that the transaction belongs to.
+The Pay Theory unique identifier assigned to the merchant that the transaction belongs to.
 
 **`transaction_id`: String**  
 The unique transaction id.
@@ -168,7 +168,7 @@ If the direction is `BACKWARD`, the offset is the first item in the previous lis
 The `transaction_id` of the offset item. If the direction is `FORWARD`, the offset item is the last item in the list. If the direction is `BACKWARD`, the offset is the first item in the list.
 
 **`query`: QueryObject**  
-The query to filter the transactions with based on PayTheory defined data.  Detailed information about the query object can be found [here](query).
+The query to filter the transactions with based on Pay Theory defined data.  Detailed information about the query object can be found [here](query).
 
 ### Nested Arguments
 #### Metadata, PaymentMethod, PaymentMethod/Payor
@@ -242,10 +242,10 @@ mutation {
 The amount of the transaction. If the FeeMode is `SERVICE_FEE`, this is the amount of the transaction before fees.
 
 **`merchant_uid`: String**  
-The PayTheory unique identifier for the merchant the transaction is for.
+The Pay Theory unique identifier for the merchant the transaction is for.
 
 **`payment_method_id`: String**  
-The PayTheory unique identifier for the payment method the transaction will be charged to.
+The Pay Theory unique identifier for the payment method the transaction will be charged to.
 
 If your fee mode is `SERVICE_FEE`, you must also pass in the `fee` and `fee_mode` arguments.
 **`fee`: Int**  
@@ -266,20 +266,20 @@ Customer defined account code for the transaction.
 The type of currency for the transaction. Defaults to `USD`.
 
 **`invoice_id`: String**  
-The PayTheory unique identifier for the invoice the transaction is for.
+The Pay Theory unique identifier for the invoice the transaction is for.
 
 **`metadata`: JSON**  
 Custom defined JSON object to be stored with the transaction.
 
 **`payment_parameters_name`: String**  
 The name of the payment parameters to use for the transaction.  
-For more information on payment parameters check out the [Payment Parameters](payment-parameters) documentation.
+For more information on payment parameters check out the [Payment Parameters](/overview/payment_parameters) documentation.
 
 **`receipt_description`: String**  
 The description of the transaction that will be displayed on the receipt.
 
 **`recurring_id`: String**  
-The PayTheory unique identifier for the recurring payment the transaction is for.
+The Pay Theory unique identifier for the recurring payment the transaction is for.
 If you pass in a recurring id, the transactions amount must be an interval of the recurring payments amount per payment.
 
 **`reference`: String**  
@@ -329,11 +329,59 @@ The amount of the service fee charged for the transaction. This will be 0 if the
 The type of currency for the transaction.
 
 **`transaction_id`: String**  
-The PayTheory unique identifier for the transaction.
+The Pay Theory unique identifier for the transaction.
 
 **`created_at`: DateTime**  
 The date and time the transaction was created.
 
+
+## Create Refund
+
+This call will create a refund for a transaction.
+
+```js
+mutation {
+  createRefund( amount: Int, 
+                refund_reason: { 
+                                reason_code: RefundReasonCode, 
+                                reason_details: String
+                                }, 
+                transaction_id: String, 
+                refund_email: String
+                )
+}
+```
+
+**Arguments**
+
+**Required Arguments**
+
+**`amount`: Int**
+The amount of the refund. This must be less than or equal to the amount of the transaction.
+
+**`refund_reason`: RefundReason**
+The reason for the refund. This is required for all refunds and is made up of the following.
+
+- **`reason_code`: RefundReasonCode**
+  - The reason code for the refund. Options are:
+    - `DUPLICATE`
+    - `FRAUDULENT`
+    - `REQUESTED_BY_CUSTOMER`
+    - `OTHER`
+- **`reason_details`: String** (optional)
+  - Additional details about the reason for the refund. 
+
+**`transaction_id`: String**
+The Pay Theory unique identifier for the transaction to refund.
+
+**Optional Arguments**
+
+**`refund_email`: String**
+The email address to send the refund receipt to. If not provided an email will not be sent out.
+
+**Returns**
+
+The call will return a boolean `true` if the refund was created successfully or errors if it fails.
 
 ## Calculate Service Fee Amount
 
@@ -364,7 +412,7 @@ This call will allow you to calculate what the fee amount should be if using `SE
 The amount of the transaction.
 
 **`merchant_uid`: String**  
-The PayTheory unique identifier for the merchant the transaction amount being calculated is for.
+The Pay Theory unique identifier for the merchant the transaction amount being calculated is for.
 
 **Returns**
 

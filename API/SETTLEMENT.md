@@ -22,7 +22,7 @@ Settlements are a batch of payments, disputes, and refunds that are grouped toge
 ```
 
 **`merchant_uid`: String**  
-The PayTheory unique identifier assigned to the merchant that the settlement belongs to.
+The Pay Theory unique identifier assigned to the merchant that the settlement belongs to.
 
 **`settlement_batch`: Int**  
 The unique settlement batch number.
