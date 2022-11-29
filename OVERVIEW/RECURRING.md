@@ -6,7 +6,7 @@ This guide will walk you through the steps to create a recurring payment in Pay 
 
 You will need to have a payment method token to create a recurring payment. You can create a payment method token by using one of our SDKs and calling the tokenizePaymentMethod function:
 
-* [Web/JS](web#tokenize-payment-method-parameters)
+* [Web/JS](../web/functions#tokenizepaymentmethod)
 
 ```js
 const TOKENIZE_PAYMENT_METHOD_PARAMETERS = {
@@ -19,7 +19,7 @@ const TOKENIZE_PAYMENT_METHOD_PARAMETERS = {
 myPayTheory.tokenizePaymentMethod(TOKENIZE_PAYMENT_METHOD_PARAMETERS)
 ```
 
-* [Apple](apple/functions#tokenizepaymentmethod)
+* [Apple](../apple/functions#tokenizepaymentmethod)
 
 ```swift
 let payTheory = PayTheory(apiKey: "YOUR_API_KEY")
@@ -31,7 +31,7 @@ You also may already have a payment method token on file that you can use to cre
 
 ## Step 2: Call GraphQL API
 
-You will need to call the GraphQL API to create a recurring payment. This call is detailed in our [GraphQL API documentation](api/recurring#create-recurring-payment).
+You will need to call the GraphQL API to create a recurring payment. This call is detailed in our [GraphQL API documentation](../api/recurring#create-recurring-payment).
 
 ```graphql
 mutation {
