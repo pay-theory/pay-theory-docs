@@ -79,19 +79,37 @@ These fields are all required to collect Cash information from the user.
 </form>
 ```
 
-## Card Present Field
+## Checkout Button Field
 
-This div is used to mount an iframe that will allow the SDK to communicate to Pay Theory.
-
-This div is required for card present to work but is not shown and is set to `display: none` by default.
+This div is used to mount an iframe that will include a checkout button.  
+This button will open a hosted checkout page that will allow the user to select a payment method and complete the payment.
 
 ```html
-<form>
-...
-<div id="pay-theory-card-present"></div>
-...
-</form>
+<div id="pay-theory-checkout-button"></div>
 ```
+
+[//]: # (## Card Present Field)
+
+[//]: # ()
+[//]: # (This div is used to mount an iframe that will allow the SDK to communicate to Pay Theory.)
+
+[//]: # ()
+[//]: # (This div is required for card present to work but is not shown and is set to `display: none` by default.)
+
+[//]: # ()
+[//]: # (```html)
+
+[//]: # (<form>)
+
+[//]: # (...)
+
+[//]: # (<div id="pay-theory-card-present"></div>)
+
+[//]: # (...)
+
+[//]: # (</form>)
+
+[//]: # (```)
 
 
 ## Styling Hosted Fields
