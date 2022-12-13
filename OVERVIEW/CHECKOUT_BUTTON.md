@@ -10,9 +10,9 @@ You need to use the Pay Theory Web SDK. This is available by adding this script 
 <script src="https://PARTNER.sdk.STAGE.com/index.js"></script>
 ```
 
-## Step 2: Add Pay Theory Elements to DOM
+## Step 2: Add Pay Theory Element to your HTML
 
-You need to add the Pay Theory elements to your DOM. You can place this elements anywhere in your DOM and the SDK will place the button in the correct place.
+You need to add the Pay Theory elements to your HTML. You can place this elements anywhere in your HTML and the SDK will place the button in the correct place.
 
 ```html
 <div id="pay-theory-checkout-button"></div>
