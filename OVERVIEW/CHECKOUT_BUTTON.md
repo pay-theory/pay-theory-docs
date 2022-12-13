@@ -1,4 +1,4 @@
-# Payment Button Quick Start
+# Checkout Button Quick Start
 
 This guide will walk you through the steps to create a payment button to enable a PayTheory Hosted Checkout experience for your Payors.
 
