@@ -632,7 +632,7 @@ const PAYMENT_METADATA = {
   "student-name": "Jane Doe"
 };
 
-// Parameters that you will pass in to configure the checkout page that opens when the button is clicked.
+// Parameters that you will pass in to configure the checkout page that opens when the qrCode is scanned.
 const CHECKOUT_DETAILS = { 
         amount: AMOUNT, 
         paymentName: "School Technology Fees",
@@ -670,7 +670,7 @@ You pass a single object into the function with the following keys.
 
 
 - `checkoutDetails`: (Object)
-  - The details for the checkout page that opens when the button is clicked. Details Below.
+  - The details for the checkout page that opens when the qrCode is scanned. Details Below.
 
 **Optional Values**
 - `size`: (Int)
@@ -700,7 +700,7 @@ You pass a single object into the function with the following keys.
 
 **Checkout Details**
 
-These are the values that you can pass into the `checkoutDetails` object to customize the checkout page that opens when the button is clicked.
+These are the values that you can pass into the `checkoutDetails` object to customize the checkout page that opens when the qrCode is scanned.
 
 **Required Values**
 - `amount`: (Int)
