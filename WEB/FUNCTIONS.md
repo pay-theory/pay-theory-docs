@@ -481,7 +481,8 @@ const OPTIONS = {
   onClick: () => {},
   onError: () => {},
   onCancel: () => {},
-  onSuccess: () => {}
+  onSuccess: () => {},
+  onBarcode: () => {}
 }
 
 paytheory.button(OPTIONS)
@@ -531,6 +532,12 @@ You pass a single object into the function with the following keys.
     - **metadata** (JSON): The metadata of the transaction
     - **payor_id** (String): The Pay Theory id for the payor that was used for the transaction
     - **payment_method_id** (String): The Pay Theory id for the payment method token
+
+
+- `onBarcode`: (Function)
+  - A function that will be called when a barcode is successfully created and the user closes the window. It is passed an object with the following values.
+    - **barcodeUrl** (String): The url for the barcode image
+    - **mapUrl** (String): The url for the map to find retail locations to pay the barcode
 
 **Checkout Details**
 
