@@ -341,14 +341,10 @@ This call will create a refund for a transaction.
 
 ```js
 mutation {
-  createRefund( amount: Int, 
-                refund_reason: { 
-                                reason_code: RefundReasonCode, 
-                                reason_details: String
-                                }, 
-                transaction_id: String, 
-                refund_email: String
-                )
+  createRefund(amount: Int, 
+               refund_reason: { reason_code: RefundReasonCode, reason_details: String }, 
+               transaction_id: String, 
+               refund_email: String )
 }
 ```
 
