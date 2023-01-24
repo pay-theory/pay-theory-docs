@@ -221,7 +221,45 @@ This allows for more advanced queries and for you to group `AND_NEXT` and `OR_NE
 
 ### Querying Sub Objects
 
-Due to the fact metadata is a nested data object metadata queries be made by passing a separate array of query pairs for the metadata.
+Due to the fact payment method is a nested data object payment method queries be made by passing a separate array of query pairs for the metadata.
+```graphql
+{
+    transactions(limit: 10, query:
+          {
+            query_list: [
+                {
+                    key: "gross_amount",
+                    value: "1000",
+                    operator: GREATER_THAN,
+                    conjunctive_operator: NONE_NEXT
+                }
+            ],
+            sort_pair: [{
+              direction: ASC,
+              key: "gross_amount"
+            }]
+          } 
+          ) {
+        items {
+            currency
+            gross_amount
+            payment_method(query_list: [
+                {
+                    key: "last_four",
+                    value: "1234",
+                    operator: EQUAL
+                }
+            ])
+        }
+        total_row_count
+    }
+}
+```
+This would return 10 transactions where the `gross_amount` is greater than 1000 and the payment has a payment method in which `last_four` is equal to 1234. It would be sorted by gross_amount in ascending order.
+
+### Querying On Metadata
+
+Metadata queries are laid out differently because of how flexible they are in nature allowing the key and value to be defined by the user.
 ```graphql
 {
     transactions(limit: 10, query:
@@ -245,8 +283,14 @@ Due to the fact metadata is a nested data object metadata queries be made by pas
             gross_amount
             metadata(query_list: [
                 {
-                    key: "user_defined_payer_id",
-                    value: "1234",
+                    key:"metadata_key",
+                    value:"user_defined_payer_id",
+                    operator: EQUAL,
+                    conjunctive_operator: AND_NEXT
+                },
+                {
+                    key:"metadata_value",
+                    value:"1234",
                     operator: EQUAL
                 }
             ])
@@ -255,6 +299,10 @@ Due to the fact metadata is a nested data object metadata queries be made by pas
     }
 }
 ```
+
+You need to use the `metadata_key` and `metadata_value` keys to query on metadata.
+
 This would return 10 transactions where the `gross_amount` is greater than 1000 and the payment has metadata `user_defined_payer_id` is equal to 1234. It would be sorted by gross_amount in ascending order.
 
+If you want to query on multiple metadata keys you want to wrap each key value pair in a `query_list`.
 
