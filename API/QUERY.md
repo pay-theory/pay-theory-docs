@@ -48,7 +48,7 @@ A list of values to compare the data to. This should be used instead of `value` 
 **~`conjunctive_operator`: ConjunctiveOperator**  
 The conjunctive operator to use to connect the query pair with the next query pair. More detail below.
 
-**`query_group`: [QueryPairs]**  
+**`query_list`: [QueryPairs]**  
 A list of query pairs to use to build out a nested query.  
 A more detailed example is below under the examples section.
 
@@ -89,7 +89,7 @@ The data is less than or equal to the value.
 ### Conjunctive Operators
 
 These operators are case-sensitive. Conjunctive operators in the same array must match for a query to work. 
-To mix operators use nested queries with query pairs containing a `query_group`. The following are the available conjunctive operators:
+To mix operators use nested queries with query pairs containing a `query_list`. The following are the available conjunctive operators:
 
 `AND_NEXT`  
  The results of the query have to meet all the conditions in the query pair list.
@@ -177,12 +177,12 @@ If you wanted to build a query that looked for any transactions that had a statu
 ```
 
 ### Transactions with a nested query
-To build nested queries you can use multiple query pairs with at least one containing a `query_group`.
+To build nested queries you can use multiple query pairs with at least one containing a `query_list`.
 ```graphql
 {
   transactions(limit: 5, queryTransactionData: {query_list: [
     {
-      query_group: [
+      query_list: [
         {
           key: "full_name",
           value: "John Doe",
