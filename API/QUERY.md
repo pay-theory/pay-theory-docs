@@ -147,16 +147,16 @@ If you wanted to build a query that looked for any settlements that had a gross_
 }
 ```
 
-## Transactions With Status `SETTLED` and their first name is `John`
+## Transactions With Status `SETTLED` and the reference starts with `test`
 
-If you wanted to build a query that looked for any transactions that had a status of `SETTLED` and had a first name of `John`, you would do the following:
+If you wanted to build a query that looked for any transactions that had a status of `SETTLED` and the `reference` starts with test, you would do the following:
 
 ```graphql
 {
   transactions(limit: 5, query: {query_list: [
   {
-    key: "full_name",
-    value: "John%",
+    key: "reference",
+    value: "test%",
     operator: LIKE,
     conjunctive_operator: AND_NEXT
   },
@@ -168,8 +168,9 @@ If you wanted to build a query that looked for any transactions that had a statu
   }
 ]}) {
     items {
-      full_name
-      gross_amount
+        transaction_id
+        reference
+        gross_amount
     }
     total_row_count
   }
@@ -184,8 +185,8 @@ To build nested queries you can use multiple query pairs with at least one conta
     {
       query_group: [
         {
-          key: "full_name",
-          value: "John Doe",
+          key: "status",
+          value: "SETTLED",
           operator: EQUAL,
           conjunctive_operator: AND_NEXT
         },
@@ -215,7 +216,7 @@ To build nested queries you can use multiple query pairs with at least one conta
 }
 ```
 
-This query would return any transactions where the `full_name` is John Doe and the `gross_amount` is greater than 100 or transactions where the `gross_amount` is greater than 1000.
+This query would return any transactions where the `status` is SETTLED and the `gross_amount` is greater than 100 or transactions where the `gross_amount` is greater than 1000.
 
 This allows for more advanced queries and for you to group `AND_NEXT` and `OR_NEXT` in a single query.
 
