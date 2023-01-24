@@ -48,7 +48,7 @@ A list of values to compare the data to. This should be used instead of `value` 
 **~`conjunctive_operator`: ConjunctiveOperator**  
 The conjunctive operator to use to connect the query pair with the next query pair. More detail below.
 
-**`query_group`: [QueryPairs]**  
+**`query_list`: [QueryPairs]**  
 A list of query pairs to use to build out a nested query.  
 A more detailed example is below under the examples section.
 
@@ -89,7 +89,7 @@ The data is less than or equal to the value.
 ### Conjunctive Operators
 
 These operators are case-sensitive. Conjunctive operators in the same array must match for a query to work. 
-To mix operators use nested queries with query pairs containing a `query_group`. The following are the available conjunctive operators:
+To mix operators use nested queries with query pairs containing a `query_list`. The following are the available conjunctive operators:
 
 `AND_NEXT`  
  The results of the query have to meet all the conditions in the query pair list.
@@ -117,7 +117,7 @@ The key to sort the data by.
 
 ## Examples
 
-### Settlements With Gross Amount over $10
+## Settlements With Gross Amount over $10
 
 If you wanted to build a query that looked for any settlements that had a gross_amount over $10 and was sorted by gross_amount in ascending order, you would do the following:
 
@@ -147,7 +147,7 @@ If you wanted to build a query that looked for any settlements that had a gross_
 }
 ```
 
-### Transactions With Status `SETTLED` and their first name is `John`
+## Transactions With Status `SETTLED` and their first name is `John`
 
 If you wanted to build a query that looked for any transactions that had a status of `SETTLED` and had a first name of `John`, you would do the following:
 
@@ -176,13 +176,13 @@ If you wanted to build a query that looked for any transactions that had a statu
 }
 ```
 
-### Transactions with a nested query
-To build nested queries you can use multiple query pairs with at least one containing a `query_group`.
+## Transactions with a nested query
+To build nested queries you can use multiple query pairs with at least one containing a `query_list`.
 ```graphql
 {
   transactions(limit: 5, queryTransactionData: {query_list: [
     {
-      query_group: [
+      query_list: [
         {
           key: "full_name",
           value: "John Doe",
@@ -219,9 +219,47 @@ This query would return any transactions where the `full_name` is John Doe and t
 
 This allows for more advanced queries and for you to group `AND_NEXT` and `OR_NEXT` in a single query.
 
-### Querying Sub Objects
+## Querying Sub Objects
 
-Due to the fact metadata is a nested data object metadata queries be made by passing a separate array of query pairs for the metadata.
+Due to the fact payment method is a nested data object payment method queries be made by passing a separate array of query pairs for the metadata.
+```graphql
+{
+    transactions(limit: 10, query:
+          {
+            query_list: [
+                {
+                    key: "gross_amount",
+                    value: "1000",
+                    operator: GREATER_THAN,
+                    conjunctive_operator: NONE_NEXT
+                }
+            ],
+            sort_pair: [{
+              direction: ASC,
+              key: "gross_amount"
+            }]
+          } 
+          ) {
+        items {
+            currency
+            gross_amount
+            payment_method(query_list: [
+                {
+                    key: "last_four",
+                    value: "1234",
+                    operator: EQUAL
+                }
+            ])
+        }
+        total_row_count
+    }
+}
+```
+This would return 10 transactions where the `gross_amount` is greater than 1000 and the payment has a payment method in which `last_four` is equal to 1234. It would be sorted by gross_amount in ascending order.
+
+## Querying On Metadata
+
+Metadata queries are laid out differently because of how flexible they are in nature allowing the key and value to be defined by the user.
 ```graphql
 {
     transactions(limit: 10, query:
@@ -245,8 +283,14 @@ Due to the fact metadata is a nested data object metadata queries be made by pas
             gross_amount
             metadata(query_list: [
                 {
-                    key: "user_defined_payer_id",
-                    value: "1234",
+                    key:"metadata_key",
+                    value:"user_defined_payer_id",
+                    operator: EQUAL,
+                    conjunctive_operator: AND_NEXT
+                },
+                {
+                    key:"metadata_value",
+                    value:"1234",
                     operator: EQUAL
                 }
             ])
@@ -255,6 +299,10 @@ Due to the fact metadata is a nested data object metadata queries be made by pas
     }
 }
 ```
+
+You need to use the `metadata_key` and `metadata_value` keys to query on metadata.
+
 This would return 10 transactions where the `gross_amount` is greater than 1000 and the payment has metadata `user_defined_payer_id` is equal to 1234. It would be sorted by gross_amount in ascending order.
 
+If you want to query on multiple metadata keys you want to wrap each key value pair in a `query_list`.
 
