@@ -153,7 +153,7 @@ If you wanted to build a query that looked for any transactions that had a statu
 
 ```graphql
 {
-  transactions(limit: 5, queryTransactionData: {query_list: [
+  transactions(limit: 5, query: {query_list: [
   {
     key: "full_name",
     value: "John%",
@@ -180,7 +180,7 @@ If you wanted to build a query that looked for any transactions that had a statu
 To build nested queries you can use multiple query pairs with at least one containing a `query_group`.
 ```graphql
 {
-  transactions(limit: 5, queryTransactionData: {query_list: [
+  transactions(limit: 5, query: {query_list: [
     {
       query_group: [
         {
