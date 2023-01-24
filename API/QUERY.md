@@ -117,7 +117,7 @@ The key to sort the data by.
 
 ## Examples
 
-### Settlements With Gross Amount over $10
+## Settlements With Gross Amount over $10
 
 If you wanted to build a query that looked for any settlements that had a gross_amount over $10 and was sorted by gross_amount in ascending order, you would do the following:
 
@@ -147,7 +147,7 @@ If you wanted to build a query that looked for any settlements that had a gross_
 }
 ```
 
-### Transactions With Status `SETTLED` and their first name is `John`
+## Transactions With Status `SETTLED` and their first name is `John`
 
 If you wanted to build a query that looked for any transactions that had a status of `SETTLED` and had a first name of `John`, you would do the following:
 
@@ -176,7 +176,7 @@ If you wanted to build a query that looked for any transactions that had a statu
 }
 ```
 
-### Transactions with a nested query
+## Transactions with a nested query
 To build nested queries you can use multiple query pairs with at least one containing a `query_list`.
 ```graphql
 {
@@ -219,7 +219,7 @@ This query would return any transactions where the `full_name` is John Doe and t
 
 This allows for more advanced queries and for you to group `AND_NEXT` and `OR_NEXT` in a single query.
 
-### Querying Sub Objects
+## Querying Sub Objects
 
 Due to the fact payment method is a nested data object payment method queries be made by passing a separate array of query pairs for the metadata.
 ```graphql
@@ -257,7 +257,7 @@ Due to the fact payment method is a nested data object payment method queries be
 ```
 This would return 10 transactions where the `gross_amount` is greater than 1000 and the payment has a payment method in which `last_four` is equal to 1234. It would be sorted by gross_amount in ascending order.
 
-### Querying On Metadata
+## Querying On Metadata
 
 Metadata queries are laid out differently because of how flexible they are in nature allowing the key and value to be defined by the user.
 ```graphql
