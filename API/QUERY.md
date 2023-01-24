@@ -48,7 +48,7 @@ A list of values to compare the data to. This should be used instead of `value` 
 **~`conjunctive_operator`: ConjunctiveOperator**  
 The conjunctive operator to use to connect the query pair with the next query pair. More detail below.
 
-**`query_list`: [QueryPairs]**  
+**`query_group`: [QueryPairs]**  
 A list of query pairs to use to build out a nested query.  
 A more detailed example is below under the examples section.
 
@@ -177,12 +177,12 @@ If you wanted to build a query that looked for any transactions that had a statu
 ```
 
 ## Transactions with a nested query
-To build nested queries you can use multiple query pairs with at least one containing a `query_list`.
+To build nested queries you can use multiple query pairs with at least one containing a `query_group`.
 ```graphql
 {
   transactions(limit: 5, queryTransactionData: {query_list: [
     {
-      query_list: [
+      query_group: [
         {
           key: "full_name",
           value: "John Doe",
@@ -304,5 +304,5 @@ You need to use the `metadata_key` and `metadata_value` keys to query on metadat
 
 This would return 10 transactions where the `gross_amount` is greater than 1000 and the payment has metadata `user_defined_payer_id` is equal to 1234. It would be sorted by gross_amount in ascending order.
 
-If you want to query on multiple metadata keys you want to wrap each key value pair in a `query_list`.
+If you want to query on multiple metadata keys you want to wrap each key value pair in a `query_group`.
 
