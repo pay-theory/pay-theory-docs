@@ -48,7 +48,7 @@ A list of values to compare the data to. This should be used instead of `value` 
 **~`conjunctive_operator`: ConjunctiveOperator**  
 The conjunctive operator to use to connect the query pair with the next query pair. More detail below.
 
-**`query_list`: [QueryPairs]**  
+**`query_group`: [QueryPairs]**  
 A list of query pairs to use to build out a nested query.  
 A more detailed example is below under the examples section.
 
@@ -147,16 +147,16 @@ If you wanted to build a query that looked for any settlements that had a gross_
 }
 ```
 
-## Transactions With Status `SETTLED` and their first name is `John`
+## Transactions With Status `SETTLED` and the reference starts with `test`
 
-If you wanted to build a query that looked for any transactions that had a status of `SETTLED` and had a first name of `John`, you would do the following:
+If you wanted to build a query that looked for any transactions that had a status of `SETTLED` and the `reference` starts with test, you would do the following:
 
 ```graphql
 {
-  transactions(limit: 5, queryTransactionData: {query_list: [
+  transactions(limit: 5, query: {query_list: [
   {
-    key: "full_name",
-    value: "John%",
+    key: "reference",
+    value: "test%",
     operator: LIKE,
     conjunctive_operator: AND_NEXT
   },
@@ -168,8 +168,9 @@ If you wanted to build a query that looked for any transactions that had a statu
   }
 ]}) {
     items {
-      full_name
-      gross_amount
+        transaction_id
+        reference
+        gross_amount
     }
     total_row_count
   }
@@ -177,15 +178,15 @@ If you wanted to build a query that looked for any transactions that had a statu
 ```
 
 ## Transactions with a nested query
-To build nested queries you can use multiple query pairs with at least one containing a `query_list`.
+To build nested queries you can use multiple query pairs with at least one containing a `query_group`.
 ```graphql
 {
-  transactions(limit: 5, queryTransactionData: {query_list: [
+  transactions(limit: 5, query: {query_list: [
     {
-      query_list: [
+      query_group: [
         {
-          key: "full_name",
-          value: "John Doe",
+          key: "status",
+          value: "SETTLED",
           operator: EQUAL,
           conjunctive_operator: AND_NEXT
         },
@@ -215,7 +216,7 @@ To build nested queries you can use multiple query pairs with at least one conta
 }
 ```
 
-This query would return any transactions where the `full_name` is John Doe and the `gross_amount` is greater than 100 or transactions where the `gross_amount` is greater than 1000.
+This query would return any transactions where the `status` is SETTLED and the `gross_amount` is greater than 100 or transactions where the `gross_amount` is greater than 1000.
 
 This allows for more advanced queries and for you to group `AND_NEXT` and `OR_NEXT` in a single query.
 
@@ -304,5 +305,5 @@ You need to use the `metadata_key` and `metadata_value` keys to query on metadat
 
 This would return 10 transactions where the `gross_amount` is greater than 1000 and the payment has metadata `user_defined_payer_id` is equal to 1234. It would be sorted by gross_amount in ascending order.
 
-If you want to query on multiple metadata keys you want to wrap each key value pair in a `query_list`.
+If you want to query on multiple metadata keys you want to wrap each key value pair in a `query_group`.
 
