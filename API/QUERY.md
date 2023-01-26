@@ -260,7 +260,8 @@ This would return 10 transactions where the `gross_amount` is greater than 1000 
 
 ## Querying On Metadata
 
-Metadata queries are laid out differently because of how flexible they are in nature allowing the key and value to be defined by the user.
+Metadata queries work similarly but do not support nested queries using `query_group`.
+
 ```graphql
 {
     transactions(limit: 10, query:
@@ -284,15 +285,10 @@ Metadata queries are laid out differently because of how flexible they are in na
             gross_amount
             metadata(query_list: [
                 {
-                    key:"metadata_key",
-                    value:"user_defined_payer_id",
-                    operator: EQUAL,
-                    conjunctive_operator: AND_NEXT
-                },
-                {
-                    key:"metadata_value",
+                    key:"user_defined_payer_id",
                     value:"1234",
-                    operator: EQUAL
+                    operator: EQUAL,
+                    conjunctive_operator: NONE_NEXT
                 }
             ])
         }
@@ -301,9 +297,5 @@ Metadata queries are laid out differently because of how flexible they are in na
 }
 ```
 
-You need to use the `metadata_key` and `metadata_value` keys to query on metadata.
-
 This would return 10 transactions where the `gross_amount` is greater than 1000 and the payment has metadata `user_defined_payer_id` is equal to 1234. It would be sorted by gross_amount in ascending order.
-
-If you want to query on multiple metadata keys you want to wrap each key value pair in a `query_group`.
 
