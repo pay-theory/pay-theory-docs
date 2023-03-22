@@ -104,7 +104,7 @@ mutation {
 
 **Arguments**
 
-**`input`: UserInput**
+**`input`: UserInput**  
 An object containing the following keys:
 
 **`email`: AWSEmail**  
