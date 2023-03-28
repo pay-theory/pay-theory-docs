@@ -43,7 +43,7 @@ If the merchant has successfully completed onboarding and has a cash processor a
 The fee model that the merchant is using.  This is used to calculate the fees that are charged to the payor.  Detailed information about the fee model can be found [here](feemodel).
 
 **`is_system`: Boolean**  
-If the merchant is a system merchant.  System merchants are merchants that also have sub merchants.
+Returns `true` if the merchant has children merchants.
 
 **`parent_merchant_uid`: String**  
 The `merchant_uid` of the parent merchant.  This is only set if the merchant is a sub merchant of a system merchant.
@@ -57,7 +57,7 @@ The `merchant_uid` of the parent merchant.  This is only set if the merchant is 
         card_active
         cash_active
         fee_model {
-            interchange {
+            merchant_fee {
                 ach_basis
                 ach_fixed
                 card_basis
@@ -233,7 +233,6 @@ mutation {
     ach_active
     card_active
     cash_active
-    is_system
     merchant_name
     merchant_uid
     parent_merchant_uid
@@ -247,11 +246,8 @@ mutation {
 **`merchant_name`: String**  
 The name of the merchant to create.
 
-**`is_system`: Boolean**  
-If the merchant is a system merchant.  System merchants are merchants that also have sub merchants.
-
 **`parent_merchant_uid`: String**  
-The `merchant_uid` of the parent merchant.  This is only set if the merchant is a sub merchant of a system merchant.
+The `merchant_uid` of the parent merchant.  This is only set if the merchant belongs to another merchant account.
 
 **`user`: User**  
 The user that will be created for the merchant.  This user will be given access to the onboarding form on Merchant creation. 

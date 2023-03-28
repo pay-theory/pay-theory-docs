@@ -39,7 +39,7 @@ let payor = Payor(
 
 
 * **feeMode**: FEE_MODE (enum)
-    * Defaults to `FEE_MODE.INTERCHANGE`. If available to merchant and set to `FEE_MODE.SERVICE_FEE` the fee will be added to the amount and charged to the payor. More details about the fee modes in your PayTheory Portal.
+    * Defaults to `FEE_MODE.MERCHANT_FEE`. If available to merchant and set to `FEE_MODE.SERVICE_FEE` the fee will be added to the amount and charged to the payor. More details about the fee modes in your PayTheory Portal.
 
 
 * **fee**: Int
