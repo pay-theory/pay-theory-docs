@@ -40,7 +40,7 @@ const CHECKOUT_DETAILS = {
         acceptedPaymentMethods: paytheory.CARD_ONLY, 
         payorId: "pt_pay_XXXXXXXXX", 
         metadata: PAYMENT_METADATA,  
-        feeMode: paytheory.INTERCHANGE, 
+        feeMode: paytheory.MERCHANT_FEE, 
         accountCode: "code-123456789",  
         paymentParameters: "expires-in-30-days", 
         invoiceId: "pt_inv_XXXXXXXXX", 

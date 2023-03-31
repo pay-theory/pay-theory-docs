@@ -193,7 +193,7 @@ To build nested queries you can use multiple query pairs with at least one conta
         {
           key: "gross_amount",
           value: "100",
-          operator: MORE_THAN,
+          operator: GREATER_THAN,
           conjunctive_operator: NONE_NEXT
         }
 
@@ -203,7 +203,7 @@ To build nested queries you can use multiple query pairs with at least one conta
     {
       key: "gross_amount",
       value: "1000",
-      operator: MORE_THAN,
+      operator: GREATER_THAN,
       conjunctive_operator: NONE_NEXT
     }
   ]}) {

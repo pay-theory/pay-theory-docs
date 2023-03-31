@@ -50,8 +50,8 @@ The payment method used to make the recurring payment. Refer to the [Payment Met
 **`fee_mode`: FeeMode**  
 The fee mode for the recurring payment.
 
-- `INTERCHANGE`: Merchant pays interchange fees
-- `SERVICE_FEE`: Payor pays service fee
+- `MERCHANT_FEE`: Merchant pays fees
+- `SERVICE_FEE`: Payor pays fees
 
 **`amount_per_payment`: Int**
 The amount of the recurring payment.
@@ -62,7 +62,7 @@ The fee for the recurring payment.
 **`total_amount_per_payment`: Int**  
 The amount the payor will be charged for the recurring payment.
 
-- Same as `amount_per_payment` if your fee mode is `INTERCHANGE`
+- Same as `amount_per_payment` if your fee mode is `MERCHANT_FEE`
 - Adjusted total of `amount_per_payment` + `fee_per_payment` if your fee mode is `SERVICE_FEE`
 
 **`currency`: String**  
@@ -312,7 +312,7 @@ The currency of the recurring payment. If not provided, the currency will defaul
 **`fee_mode`: FEE_MODE**  
 The fee mode of the recurring payment. The following fee modes are available:
 
-- `INTERCHANGE` (default)
+- `MERCHANT_FEE` (default)
 - `SERVICE_FEE`
 
 **`first_payment_date`: Date**  
@@ -481,7 +481,7 @@ The `recurring_id` of the recurring payment to be cancelled.
 **`fee`: Int**  
 If the recurring payment has fee_mode set to `SERVICE_FEE`, this will be the total amount of fees that will be charged to the customer to payoff the missed payments.
 
-If the recurring payment has fee_mode set to `INTERCHANGE`, this will be 0.
+If the recurring payment has fee_mode set to `MERCHANT_FEE`, this will be 0.
 
 **`number_of_payments_missed`: Int**  
 The number of payments that have been missed.
