@@ -106,7 +106,7 @@ const PAYOR_INFO = {
   }
 }
 
-const FEE_MODE = window.paytheory.INTERCHANGE
+const FEE_MODE = window.paytheory.MERCHANT_FEE
 
 // optionally provide custom metadata to help track payments
 const PAYMENT_METADATA = {

@@ -122,7 +122,7 @@ The only required key is `amount`.
 
 
 - `feeMode`: (String)
-  - Defaults to `window.paytheory.INTERCHANGE`. If available to merchant and set to `window.paytheory.SERVICE_FEE` the fee will be added to the amount and charged to the payor. More details about the fee modes in your Pay Theory Portal.
+  - Defaults to `window.paytheory.MERCHANT_FEE`. If available to merchant and set to `window.paytheory.SERVICE_FEE` the fee will be added to the amount and charged to the payor. More details about the fee modes in your Pay Theory Portal.
 
 
 - `fee`: (Int)
@@ -361,7 +361,7 @@ Once the `tokenizePaymentMethod` function is called, you will receive a response
 [//]: # ()
 [//]: # (- `feeMode`: &#40;String&#41;)
 
-[//]: # (  - Defaults to `window.paytheory.INTERCHANGE`. If available to merchant and set to `window.paytheory.SERVICE_FEE` the fee will be added to the amount and charged to the payor. More details about the fee modes in your Pay Theory Portal.)
+[//]: # (  - Defaults to `window.paytheory.MERCHANT_FEE`. If available to merchant and set to `window.paytheory.SERVICE_FEE` the fee will be added to the amount and charged to the payor. More details about the fee modes in your Pay Theory Portal.)
 
 [//]: # ()
 [//]: # ()
@@ -458,7 +458,7 @@ const CHECKOUT_DETAILS = {
         acceptedPaymentMethods: paytheory.CARD_ONLY, 
         payorId: "pt_pay_XXXXXXXXX", 
         metadata: PAYMENT_METADATA,  
-        feeMode: paytheory.INTERCHANGE, 
+        feeMode: paytheory.MERCHANT_FEE, 
         accountCode: "code-123456789",  
         paymentParameters: "expires-in-30-days", 
         invoiceId: "pt_inv_XXXXXXXXX", 
@@ -583,7 +583,7 @@ These are the values that you can pass into the `checkoutDetails` object to cust
 - `feeMode`: (String)
   - The fee mode that will be used for the payment. Defaults to `paytheory.FIXED`.
   - Constants are available from the SDK.
-  - Available options are `paytheory.SERVICE_FEE` and `paytheory.INTERCHANGE`
+  - Available options are `paytheory.SERVICE_FEE` and `paytheory.MERCHANT_FEE`
 
 
 - `accountCode`: (String)
@@ -649,7 +649,7 @@ const CHECKOUT_DETAILS = {
         acceptedPaymentMethods: paytheory.CARD_ONLY, 
         payorId: "pt_pay_XXXXXXXXX", 
         metadata: PAYMENT_METADATA,  
-        feeMode: paytheory.INTERCHANGE, 
+        feeMode: paytheory.MERCHANT_FEE, 
         accountCode: "code-123456789",  
         paymentParameters: "expires-in-30-days", 
         invoiceId: "pt_inv_XXXXXXXXX", 
@@ -749,7 +749,7 @@ These are the values that you can pass into the `checkoutDetails` object to cust
 - `feeMode`: (String)
   - The fee mode that will be used for the payment. Defaults to `paytheory.FIXED`.
   - Constants are available from the SDK.
-  - Available options are `paytheory.SERVICE_FEE` and `paytheory.INTERCHANGE`
+  - Available options are `paytheory.SERVICE_FEE` and `paytheory.MERCHANT_FEE`
 
 
 - `accountCode`: (String)

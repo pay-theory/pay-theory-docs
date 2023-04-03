@@ -54,7 +54,7 @@ The type of currency for the payment.
 
 **`fee_mode`: String**  
 The fee mode of the payments that will be made with the payment link.
-* `INTERCHANGE`
+* `MERCHANT_FEE`
 * `SERVICE_FEE`
 
 **`amount_is_variable`: Boolean**  
@@ -256,7 +256,7 @@ The currency of the payment.
 
 **`fee_mode`: FeeMode**  
 The fee mode of the payments that will be made with the payment link.
-* `INTERCHANGE`
+* `MERCHANT_FEE`
 * `SERVICE_FEE`
 
 **`amount_is_variable`: Boolean**  
@@ -389,7 +389,7 @@ The currency of the payment.
 
 **`fee_mode`: FeeMode**  
 The fee mode of the payments that will be made with the payment link.
-* `INTERCHANGE`
+* `MERCHANT_FEE`
 * `SERVICE_FEE`
 
 **`amount_is_variable`: Boolean**  
