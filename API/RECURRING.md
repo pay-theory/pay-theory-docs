@@ -31,6 +31,7 @@ You can also create a recurring payment with no set payment amounts to enable a 
     account_code: String
     reference: String
     created_date: DateTime
+    mute_all_emails: Boolean
     metadata: JSON
 }
 ```
@@ -115,6 +116,9 @@ Custom reference for the recurring payment that will be tied to each payment.
 **`created_date`: DateTime**  
 The date the recurring payment was created.
 
+**`mute_all_emails`: Boolean**  
+Manage whether the payor will receive emails for the recurring payment from Pay Theory.
+
 **`metadata`: JSON**  
 Custom metadata for the recurring payment that will be tied to each payment.
 
@@ -134,6 +138,7 @@ Custom metadata for the recurring payment that will be tied to each payment.
             is_processing
             merchant_uid
             metadata(query_list: $metadata_query)
+            mute_all_emails
             next_payment_date
             payment_interval
             payment_method(query_list: $payment_method_query)) {
@@ -232,7 +237,8 @@ mutation {
             payor: Payor, 
             recurring_description: String, 
             recurring_name: String, 
-            reference: String
+            reference: String,
+            mute_all_emails: Boolean
         }) {
     account_code
     amount_per_payment
@@ -321,6 +327,9 @@ The date of the first payment. If not provided, the first payment will be made i
 **`metadata`: JSON**  
 Custom metadata for the recurring payment that will be tied to each payment.
 
+**`mute_all_emails`: Boolean**  
+If set to `true`, no emails will be sent to the payor for this recurring payment. Default is `false`.
+
 **`payment_count`: Int**  
 The number of payments to be made. If not provided, the recurring payment will continue until cancelled.
 
@@ -352,6 +361,7 @@ mutation {
                 payment_method_id: String, 
                 recurring_id: String, 
                 pay_all_missed_payments: Boolean
+                mute_all_emails: Boolean
             }) {
         account_code
         amount_per_payment
@@ -363,6 +373,7 @@ mutation {
         is_processing
         merchant_uid
         metadata
+        mute_all_emails
         next_payment_date
         payment_interval
         payment_method {
@@ -403,6 +414,9 @@ If recurring payment is in a Failed state it will try to run a payment with the 
 If the recurring payment has a set number of payments (Payment Plan) and is in a Failed state, this will make a one time charge to account for all missed payments to get it back in to a Successful state.
 
 If the recurring payment does not have a set number of payments (Subscription) you are unable to use this option and only a single payment will be charged.
+
+**`mute_all_emails`: Boolean**  
+If set to `true`, no emails will be sent to the payor for this recurring payment.
 
 **Returns**
 

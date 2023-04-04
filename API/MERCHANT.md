@@ -222,7 +222,6 @@ The total number of merchants that match the query. Used to help with pagination
 ```js
 mutation {
   createMerchant(merchant_name: String, 
-                is_system: String, 
                 parent_merchant_uid: String, 
                 user: {
                     email: AWSEmail, 
