@@ -9,7 +9,7 @@ Here is some steps to get you started with a basic implementation.
 To use the Pay Theory Web SDK, you need to add this script to your web header:
 
 ```html
-<script src="https://PARTNER.sdk.STAGE.com/index.js"></script>
+<script src="https://PARTNER_NAME.sdk.STAGE.com/index.js"></script>
 ```
 
 ## Step 1: Add Pay Theory Elements to Your Form
