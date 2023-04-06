@@ -329,6 +329,7 @@ Custom metadata for the recurring payment that will be tied to each payment.
 
 **`mute_all_emails`: Boolean**  
 If set to `true`, no emails will be sent to the payor for this recurring payment. Default is `false`.
+For more information on how to query our data set to send your own emails, please refer to our [Recurring Quick Start](overview/recurring#optional--manage-recurring-emails).
 
 **`payment_count`: Int**  
 The number of payments to be made. If not provided, the recurring payment will continue until cancelled.
