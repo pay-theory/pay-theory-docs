@@ -41,6 +41,9 @@ The unique transaction id.
 **`payment_method`: PaymentMethodTokenObject**
 The payment method used to make the transaction. Refer to the [Payment Method Token](payment_method_token) for more info.
 
+**`recurring`: RecurringPayment**  
+The recurring payment that the transaction belongs to if any. Refer to the [Recurring Payment](recurring) for more info.
+
 **`account_code`: String**  
 Metadata passed in at the time of the transaction under the key `pay-theory-account-code`
 
@@ -110,7 +113,7 @@ List of strings, if any, detailing the reason a transaction failed.
 The metadata that was passed in at the time of the transaction.
 
 ## Query Transactions
-```js
+```graphql
 {
   transactions(direction: FORWARD, limit: 10, offset: "", offset_id: "", query: QueryObject) {
     items {
@@ -130,6 +133,9 @@ The metadata that was passed in at the time of the transaction.
         payor(query_list: []) {
             payor_id
         }
+      }
+      recurring {
+        recurring_id
       }
       reference
       refund_reason {
