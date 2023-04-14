@@ -2,7 +2,9 @@
 
 The Pay Theory SDK provides a set of event listeners that can be used to respond messages from the hosted fields and inside the SDK. 
 
-These listeners are available on the object returned by the `create` function.
+The `errorObserver` is available at the root of our SDK.
+
+The rest of the listeners are available on the object returned by the `create` function.
 
 Each of these listeners takes a callback function as an argument. Below we will detail the arguments that are passed to each callback function.
 
@@ -25,7 +27,7 @@ When the fields are ready it will pass a boolean value of `true` to the callback
 The `errorObserver` will fire when an error occurs anywhere inside the Pay Theory SDK. This is a good place to add any logic that should only be executed when an error occurs.
 
 ```javascript
-myPayTheory.errorObserver(error => {
+window.paytheory.errorObserver(error => {
     // Logic to respond to errors
 })
 ```

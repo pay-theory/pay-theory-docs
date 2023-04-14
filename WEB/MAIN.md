@@ -41,6 +41,10 @@ const STYLES = {
     ...style_options
 }
 
+window.paytheory.errorObserver(error => {
+    // Logic to respond to errors
+})
+
 const myPayTheory = await window.paytheory.create(
         API_KEY,
         STYLES)
@@ -65,10 +69,6 @@ myPayTheory.readyObserver(ready => {
 
 myPayTheory.validObserver(valid => {
     // Logic to respond when the form is valid
-})
-
-myPayTheory.errorObserver(error => {
-    // Logic to respond to errors
 })
 
 myPayTheory.stateObserver(state => {
