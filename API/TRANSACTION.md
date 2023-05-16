@@ -41,6 +41,9 @@ The unique transaction id.
 **`payment_method`: PaymentMethodTokenObject**
 The payment method used to make the transaction. Refer to the [Payment Method Token](payment_method_token) for more info.
 
+**`recurring`: RecurringPayment**  
+The recurring payment that the transaction belongs to if any. Refer to the [Recurring Payment](recurring) for more info.
+
 **`account_code`: String**  
 Metadata passed in at the time of the transaction under the key `pay-theory-account-code`
 
@@ -110,7 +113,7 @@ List of strings, if any, detailing the reason a transaction failed.
 The metadata that was passed in at the time of the transaction.
 
 ## Query Transactions
-```js
+```graphql
 {
   transactions(direction: FORWARD, limit: 10, offset: "", offset_id: "", query: QueryObject) {
     items {
@@ -130,6 +133,9 @@ The metadata that was passed in at the time of the transaction.
         payor(query_list: []) {
             payor_id
         }
+      }
+      recurring {
+        recurring_id
       }
       reference
       refund_reason {
@@ -252,10 +258,10 @@ If your fee mode is `SERVICE_FEE`, you must also pass in the `fee` and `fee_mode
 The amount of the fee that will be charged to the payor for the transaction if the FeeMode is `SERVICE_FEE`.
 
 **`fee_mode`: FeeMode**
-The fee mode on the transaction. `SERVICE_FEE` charges the fees to the payor. `INTERCHANGE` charges the fees to the merchant. Options are:
+The fee mode on the transaction. `SERVICE_FEE` charges the fees to the payor. `MERCHANT_FEE` charges the fees to the merchant. Options are:
 
 * `SERVICE_FEE`
-* `INTERCHANGE` (default)
+* `MERCHANT_FEE` (default)
 
 **Optional Arguments**
 
@@ -323,7 +329,7 @@ The brand of the card used for the transaction.
 The last four digits of the card or bank account used for the transaction.
 
 **`service_fee`: Int**  
-The amount of the service fee charged for the transaction. This will be 0 if the FeeMode is `INTERCHANGE`.
+The amount of the service fee charged for the transaction. This will be 0 if the FeeMode is `MERCHANT_FEE`.
 
 **`currency`: String**  
 The type of currency for the transaction.

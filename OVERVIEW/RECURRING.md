@@ -42,7 +42,8 @@ mutation {
             fee_mode: FEE_MODE, 
             first_payment_date: Date, 
             merchant_uid: String, 
-            metadata: JSON, 
+            metadata: JSON,
+            mute_all_emails: Boolean
             payment_count: Int, 
             payment_interval: PAYMENT_INTERVAL, 
             payment_method_id: String, 
@@ -61,6 +62,7 @@ mutation {
     is_active
     is_processing
     merchant_uid
+    mute_all_emails
     metadata
     next_payment_date
     payment_interval
@@ -96,3 +98,90 @@ You can manage your recurring payments using the GraphQL API. These calls are av
   * Query how many payments have been missed and the total amount of those payments. This is useful if you want to charge a customer for all missed payments at once when updating their payment method.
 * [Retry Failed Recurring Payment](/api/recurring#create-retry-for-failed-recurring-payment)
   * Retry a failed recurring payment. This should be used if the payment method on file is still valid, and you want to retry the payment.
+
+
+## Optional: Manage Recurring Emails
+
+If the `mute_all_emails` field is set to `true` and you want to send emails for recurring payments you can do so by utilizing the following GraphQL API calls:
+
+### Successful and Failed Recurring Payment
+
+If you want to check for successful and failed recurring payments you can use the following GraphQL API calls:
+
+```graphql
+query RecurringTransactions {
+  transactions(query: { query_list: [
+                        { conjunctive_operator: NONE_NEXT, 
+                          key: "recurring_id", 
+                          operator: IS_NOT_NULL, 
+                          conjunctive_operator:AND_NEXT
+                        }, 
+                        { conjunctive_operator: NONE_NEXT, 
+                          key: "transaction_date", 
+                          operator: GREATER_THAN, 
+                          value: "2023-03-30T06:00:00" # Choose date based on the interval you are checking to send emails
+                        }]}) {
+    items {
+      transaction_id
+      recurring {
+        recurring_id
+      }
+      status
+      transaction_type
+      ...
+    }
+  }
+}
+```
+This query will return all transactions that belong to a recurring payment. You can set the date based on the range you want to check to send out emails. You would then just need to check the `status` and `transaction_type` fields to determine if the transaction was successful or failed and send the appropriate email.
+
+### Upcoming Expiring Payment Method
+
+If you want to check for recurring payments that have an expiring payment method you can use the following GraphQL API call:
+
+```graphql
+query ExpiringPaymentMethods {
+  recurringPayments {
+    items {
+      payment_method(query_list: 
+                        [{ key: "exp_date", 
+                          operator: EQUAL, 
+                          value: "1225", 
+                          conjunctive_operator: NONE_NEXT }]) 
+        {
+          exp_date
+        }
+      recurring_id
+    }
+  }
+}
+```
+
+This query will return all recurring payments that have a payment method that is expiring on the value you pass in.  
+The `exp_date` field is a string that represents the date as "MMYY". You can then decide how far out you want to check for expiring payment methods and send out emails accordingly.
+
+
+### Upcoming Recurring Payment
+
+If you want to check for upcoming recurring payments you can use the following GraphQL API call:
+
+```graphql
+query MyQuery {
+  recurringPayments(query: { query_list: [
+    { conjunctive_operator: NONE_NEXT,
+      key: "next_payment_date",
+      operator: EQUAL,
+      value: "2023-03-30" # Choose date based on the interval you are checking to send emails
+    }]}) {
+    items {
+      recurring_id
+      next_payment_date
+      payment_interval
+    }
+  }
+}
+```
+
+This query will return all recurring payments that have a next payment date that matches the date you pass in. 
+You can set the date based on the range you want to check to send out emails. You would then just need to check the `status` and `transaction_type` fields to determine if the transaction was successful or failed and send the appropriate email.
+

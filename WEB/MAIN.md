@@ -9,7 +9,7 @@ Here is some steps to get you started with a basic implementation.
 To use the Pay Theory Web SDK, you need to add this script to your web header:
 
 ```html
-<script src="https://PARTNER.sdk.STAGE.com/index.js"></script>
+<script src="https://PARTNER_NAME.sdk.STAGE.com/index.js"></script>
 ```
 
 ## Step 1: Add Pay Theory Elements to Your Form
@@ -41,6 +41,10 @@ const STYLES = {
     ...style_options
 }
 
+window.paytheory.errorObserver(error => {
+    // Logic to respond to errors
+})
+
 const myPayTheory = await window.paytheory.create(
         API_KEY,
         STYLES)
@@ -65,10 +69,6 @@ myPayTheory.readyObserver(ready => {
 
 myPayTheory.validObserver(valid => {
     // Logic to respond when the form is valid
-})
-
-myPayTheory.errorObserver(error => {
-    // Logic to respond to errors
 })
 
 myPayTheory.stateObserver(state => {
@@ -106,7 +106,7 @@ const PAYOR_INFO = {
   }
 }
 
-const FEE_MODE = window.paytheory.INTERCHANGE
+const FEE_MODE = window.paytheory.MERCHANT_FEE
 
 // optionally provide custom metadata to help track payments
 const PAYMENT_METADATA = {

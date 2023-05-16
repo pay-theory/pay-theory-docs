@@ -7,7 +7,7 @@ This guide will walk you through the steps to create a payment button to enable 
 You need to use the Pay Theory Web SDK. This is available by adding this script to your web header:
 
 ```html
-<script src="https://PARTNER.sdk.STAGE.com/index.js"></script>
+<script src="https://PARTNER_NAME.sdk.STAGE.com/index.js"></script>
 ```
 
 ## Step 2: Add Pay Theory Element to your HTML
@@ -40,7 +40,7 @@ const CHECKOUT_DETAILS = {
         acceptedPaymentMethods: paytheory.CARD_ONLY, 
         payorId: "pt_pay_XXXXXXXXX", 
         metadata: PAYMENT_METADATA,  
-        feeMode: paytheory.INTERCHANGE, 
+        feeMode: paytheory.MERCHANT_FEE, 
         accountCode: "code-123456789",  
         paymentParameters: "expires-in-30-days", 
         invoiceId: "pt_inv_XXXXXXXXX", 

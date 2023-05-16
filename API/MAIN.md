@@ -103,10 +103,10 @@ This key should be stored securely and not shared with anyone. It should be used
 
 Queries are then executed by sending POST HTTP requests to the endpoint:
 
-***POST `https://api.PARTNER.STAGE.com/graphql`***
+***POST `https://api.PARTNER_NAME.STAGE.com/graphql`***
 
 ```commandline
-curl --location --request POST 'https://api.PARTNER.STAGE.com/graphql' 
+curl --location --request POST 'https://api.PARTNER_NAME.STAGE.com/graphql' 
 --header 'Authorization: MERCHANT_UID;SECRET_KEY' 
 --header 'Content-Type: application/graphql' 
 --data '{"query":"{transactions(limit: 3) { items { transaction_id }}}"}'
