@@ -60,7 +60,7 @@ paytheory.payTheoryFields({
 
 ## Step 5: Once the fields are valid, run transaction
 
-Use [State Listeners](web/event_listeners#validobserver) to tell when the hosted fields are valid and you can submit the payment.
+Use the [valid observer](web/event_listeners#validobserver) to tell when the hosted fields are valid, so you can submit the payment.
 
 The only required field for the `transact` parameters is the `amount` field.
 
