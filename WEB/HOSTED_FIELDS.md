@@ -8,8 +8,6 @@ These fields are used to collect card information from the user. The card number
 
 You also need to ensure you are capturing the zip code for the card. You can do this by either using the `pay-theory-credit-card-zip` field or by passing the `billingInfo` into the `transact` or `tokenizePaymentMethod` fields.
 
-```html
-
 ### Separate Card Fields
 
 These fields are used to collect the required info from the user for a valid card payment.
