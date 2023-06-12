@@ -192,18 +192,6 @@ payTheoryFragment.configure(
 )
 ```
 
-* **paymentParameters**: String
-  * Set Pay Theory payment parameters for a card or bank payment
-
-```Kotlin
-//set payment parameter
-payTheoryFragment.configure(
-    apiKey = "API_KEY",
-    amount = 1000,
-    paymentParameters = "PAYMENT_PARAMETERS"
-)
-```
-
 * **invoiceId**: String
   * Set an invoice id to submit the transaction for a Pay Theory invoice
 
