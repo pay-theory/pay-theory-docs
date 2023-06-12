@@ -18,7 +18,7 @@ const STYLES = {
 const myPayTheory = await window.paytheory.create(API_KEY, STYLES)
 ```
 
-This function returns a promise that resolves to the Pay Theory object containing the functions listed below and all available [Event Listeners](event_listeners) and [State Listeners](state_listeners).
+This function returns a promise that resolves to the Pay Theory object containing the functions listed below and all available [Event Listeners](web/event_listeners).
 
 ### mount
 
@@ -61,7 +61,7 @@ In the object you can pass in the following properties:
 
 ## Event Listeners
 
-These event listeners are no longer needed since the [transact](test), [tokenize](test), and [capture](test) functions will return a promise that resolves to the data you need.
+These event listeners are no longer needed since the [transact](web/functions#transact), [tokenizePaymentMethod](web/functions#tokenizepaymentmethod), and [capture](web/functions#capture) functions will return a promise that resolves to the data you need.
 
 ### tokenizeObserver
 
