@@ -55,11 +55,6 @@ let payor = Payor(
     * Custom description assigned to a payment. Will be included in the transaction schema and in the PayTheory Portal.
 
 
-* **paymentParameters**: String
-    * The payment parameters to use for the payment.
-    * For more information on payment parameters check out the [Payment Parameters](/overview/payment_parameters) documentation.
-
-
 * **invoiceId**: String
     * The PayTheory invoice ID to use for the payment. Allows for user to assign a payment to an invoice.
 

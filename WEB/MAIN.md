@@ -12,6 +12,16 @@ To use the Pay Theory Web SDK, you need to add this script to your web header:
 <script src="https://PARTNER_NAME.sdk.STAGE.com/index.js"></script>
 ```
 
+The SDK will be available on the window object as `paytheory`.
+
+It can be accessed as follows:
+
+```javascript
+paytheory
+//or
+window.paytheory
+```
+
 ## Step 2: Add Pay Theory Elements to Your Form
 
 You need to add the Pay Theory elements to your form. You can place these elements anywhere in your form and the SDK will place the hosted fields in the correct place.
@@ -26,14 +36,6 @@ You need to add the Pay Theory elements to your form. You can place these elemen
 ```
 
 ## Step 3: Set up the event listeners
-
-The SDK will be available on the window object as `paytheory`.:
-
-```javascript
-paytheory
-//or
-window.paytheory
-```
 
 You would then need to call any event listeners before you initialize the Pay Theory fields.
 

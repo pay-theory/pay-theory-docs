@@ -25,7 +25,6 @@ const CHECKOUT_DETAILS = {
         metadata: PAYMENT_METADATA,  
         feeMode: paytheory.MERCHANT_FEE, 
         accountCode: "code-123456789",  
-        paymentParameters: "expires-in-30-days", 
         invoiceId: "pt_inv_XXXXXXXXX", 
         recurringId: "pt_rec_XXXXXXXXX", 
 }
@@ -128,10 +127,6 @@ These are the values that you can pass into the `checkoutDetails` object to cust
 
 - `accountCode`: (String)
     - The account code that will be used for the payment.
-
-
-- `paymentParameters`: (String)
-    - The payment parameters that will be used for the payment.
 
 
 - `invoiceId`: (String)
