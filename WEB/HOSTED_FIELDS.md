@@ -4,7 +4,11 @@ These Hosted Fields are used to collect sensitive payment information from the u
 
 ## Card Fields
 
-These fields are used to collect card information from the user.
+These fields are used to collect card information from the user. The card number, expiration date, and CVV are all required to collect a valid card payment.
+
+You also need to ensure you are capturing the zip code for the card. You can do this by either using the `pay-theory-credit-card-zip` field or by passing the `billingInfo` into the `transact` or `tokenizePaymentMethod` fields.
+
+```html
 
 ### Separate Card Fields
 
@@ -16,7 +20,6 @@ These fields are used to collect the required info from the user for a valid car
 <div id="pay-theory-credit-card-number"></div>
 <div id="pay-theory-credit-card-exp"></div>
 <div id="pay-theory-credit-card-cvv"></div>
-<div id="pay-theory-credit-card-zip"></div>
 ...
 </form>
 ```
@@ -29,7 +32,6 @@ These fields are used to collect the required info from the user for a valid car
 <form>
 ...
 <div id="pay-theory-credit-card"></div>
-<div id="pay-theory-credit-card-zip"></div>
 ...
 </form>
 ```
@@ -47,6 +49,7 @@ These optional fields are used to collect billing information from the user.
 <div id="pay-theory-credit-card-address-2"></div>
 <div id="pay-theory-credit-card-city"></div>
 <div id="pay-theory-credit-card-state"></div>
+<div id="pay-theory-credit-card-zip"></div>
 ...
 </form>
 ```
