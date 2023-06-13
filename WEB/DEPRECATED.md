@@ -3,7 +3,7 @@
 
 ## Create and Mount
 
-These functions have been replaced with the [payTheoryFields](test) function. You no longer need to run `create` and `mount` separately. Instead, you can run `payTheoryFields` and pass in the API key and styles object.
+These functions have been replaced with the [payTheoryFields](functions#paytheoryfields) function. You no longer need to run `create` and `mount` separately. Instead, you can run `payTheoryFields` and pass in the API key and styles object.
 
 ### create
 
@@ -18,7 +18,7 @@ const STYLES = {
 const myPayTheory = await window.paytheory.create(API_KEY, STYLES)
 ```
 
-This function returns a promise that resolves to the Pay Theory object containing the functions listed below and all available [Event Listeners](web/event_listeners).
+This function returns a promise that resolves to the Pay Theory object containing the functions listed below and all available [Event Listeners](event_listeners).
 
 ### mount
 
@@ -61,7 +61,7 @@ In the object you can pass in the following properties:
 
 ## Event Listeners
 
-These event listeners are no longer needed since the [transact](web/functions#transact), [tokenizePaymentMethod](web/functions#tokenizepaymentmethod), and [capture](web/functions#capture) functions will return a promise that resolves to the data you need.
+These event listeners are no longer needed since the [transact](functions#transact), [tokenizePaymentMethod](functions#tokenizepaymentmethod), and capture functions will return a promise that resolves to the data you need.
 
 ### tokenizeObserver
 
@@ -188,7 +188,7 @@ myPayTheory.cashObserver(result => {
 
 #### Callback Argument
 
-While generating the Barcode it will use the geoloaction to return a map url for the users specific location.
+While generating the Barcode it will use the geolocation to return a map url for the users specific location.
 
 If this is the first time it has been requested the user will have the opportunity to accept or decline the request.
 
@@ -200,7 +200,7 @@ You will be passed back an object with the following properties:
 
 ## initTransaction
 
-This function was deprecated and you should use `transact` in its place.
+This function was deprecated, and you should use `transact` in its place.
 
 The initTransaction function is used to submit a payment to Pay Theory.
 
@@ -211,5 +211,5 @@ myPayTheory.initTransaction(amount, payorInfo, confirmation)
 ### Arguments
 
 - **amount** (Int): The amount of the transaction
-- **payorInfo** (Object): The payor information. You can see more on the payorInfo object [here](web/functions#payor-info-object)
+- **payorInfo** (Object): The payor information. You can see more on the payorInfo object [here](functions#payor-info-object)
 - **confirmation** (Boolean): Whether to require confirmation of the payment. If this is set to `true` then the `tokenizeObserver` will fire when the payment is tokenized and the `captureObserver` will fire when the payment is captured. If this is set to `false` then the `transactedObserver` will fire when the payment is completed.

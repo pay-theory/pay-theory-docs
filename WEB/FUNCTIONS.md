@@ -20,7 +20,7 @@ These are the values that you can pass into the `payTheoryFields` function to cu
   - Your Pay Theory API key. This is required to initialize the Hosted Fields.
 
 - `styles`: (Object)
-  - see the [Styles object](web/hosted_fields#styling-hosted-fields) for more details
+  - see the [Styles object](hosted_fields#styling-hosted-fields) for more details
 
 - `placeholders`: (Object)
   - An object that contains any custom placeholders you would like to use for the fields. These keys can be used to customize the placeholders for the following fields:
