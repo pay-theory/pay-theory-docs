@@ -16,7 +16,7 @@ const TOKENIZE_PAYMENT_METHOD_PARAMETERS = {
 }
 
 
-myPayTheory.tokenizePaymentMethod(TOKENIZE_PAYMENT_METHOD_PARAMETERS)
+paytheory.tokenizePaymentMethod(TOKENIZE_PAYMENT_METHOD_PARAMETERS)
 ```
 
 * [Apple](../apple/functions#tokenizepaymentmethod)
