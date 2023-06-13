@@ -3,7 +3,7 @@
 
 ## Create and Mount
 
-These functions have been replaced with the [payTheoryFields](web/functions#paytheoryfields) function. You no longer need to run `create` and `mount` separately. Instead, you can run `payTheoryFields` and pass in the API key and styles object.
+These functions have been replaced with the [payTheoryFields](functions#paytheoryfields) function. You no longer need to run `create` and `mount` separately. Instead, you can run `payTheoryFields` and pass in the API key and styles object.
 
 ### create
 
@@ -188,7 +188,7 @@ myPayTheory.cashObserver(result => {
 
 #### Callback Argument
 
-While generating the Barcode it will use the geoloaction to return a map url for the users specific location.
+While generating the Barcode it will use the geolocation to return a map url for the users specific location.
 
 If this is the first time it has been requested the user will have the opportunity to accept or decline the request.
 
@@ -200,7 +200,7 @@ You will be passed back an object with the following properties:
 
 ## initTransaction
 
-This function was deprecated and you should use `transact` in its place.
+This function was deprecated, and you should use `transact` in its place.
 
 The initTransaction function is used to submit a payment to Pay Theory.
 
