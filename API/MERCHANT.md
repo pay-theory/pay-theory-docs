@@ -40,7 +40,7 @@ If the merchant has successfully completed onboarding and has an ACH processor a
 If the merchant has successfully completed onboarding and has a cash processor active.
 
 **`fee_model`: FeeModel**  
-The fee model that the merchant is using.  This is used to calculate the fees that are charged to the payor.  Detailed information about the fee model can be found [here](feemodel).
+The fee model that the merchant is using.  This is used to calculate the fees that are charged to the payor.
 
 **`is_system`: Boolean**  
 Returns `true` if the merchant has children merchants.
