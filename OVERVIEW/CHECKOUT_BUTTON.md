@@ -42,7 +42,6 @@ const CHECKOUT_DETAILS = {
         metadata: PAYMENT_METADATA,  
         feeMode: paytheory.MERCHANT_FEE, 
         accountCode: "code-123456789",  
-        paymentParameters: "expires-in-30-days", 
         invoiceId: "pt_inv_XXXXXXXXX", 
         recurringId: "pt_rec_XXXXXXXXX", 
 }
