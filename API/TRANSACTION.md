@@ -337,7 +337,7 @@ The Pay Theory unique identifier for the transaction.
 The date and time the transaction was created.
 
 **`failed_reason`: String**
-The error_code explaining why the transaction failed. This will be null if the transaction succeeded. You can find a list of error codes [here](/overview/failed_transactions)
+The failure_code explaining why the transaction failed. This will be null if the transaction succeeded. You can find a list of failure codes [here](/overview/failed_transactions)
 
 
 ## Create Refund

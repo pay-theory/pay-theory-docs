@@ -200,8 +200,8 @@ This is the value of the `body` key in the response if the `type` is `FAILED`:
 - **state** (String): The state of the transaction
   - This will be `FAILURE`
 - **reason** (Object):
-  - **error_code** (String): The error code for the failure. You can find a list of error codes [here](/overview/failed_transactions)
-  - **error_text** (String): The message for the failure
+  - **failure_code** (String): The failure code for the failure. You can find a list of failure codes [here](/overview/failed_transactions)
+  - **failure_text** (String): The message for the failure
 
 ### Confirmation Response
 

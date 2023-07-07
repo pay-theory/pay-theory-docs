@@ -1,13 +1,13 @@
 # Failed Transactions
-When a transaction fails you will be returned a transaction with a status of `FAILURE`. In the SDK you will also receive a `reason` object with an `error_code` and `error_text` that will give you more information about the failure.
+When a transaction fails you will be returned a transaction with a status of `FAILURE`. In the SDK you will also receive a `reason` object with an `failure_code` and `failure_text` that will give you more information about the failure.
 
-The `error_text` will be a sentence explaining the Failure and is the better option to be displayed to the user without modification. 
+The `failure_text` will be a sentence explaining the Failure and is the better option to be displayed to the user without modification. 
 
-The `error_code` a string that you can use if you would rather display your own error message. 
+The `failure_code` a string that you can use if you would rather display your own error message. 
 
-If you are calling the [createOneTimePayment](/api/transaction#create-one-time-payment) endpoint directly you will receive a response and the `error_code` and will the `failure_reason`.
+If you are calling the [createOneTimePayment](/api/transaction#create-one-time-payment) endpoint you will receive a response and the `failure_code` will be the `failure_reason` in the response.
 
-The error codes are listed below.
+The failure codes are listed below.
 
 | CODE                                | DESCRIPTION                                                                                                        |
 |-------------------------------------|--------------------------------------------------------------------------------------------------------------------|
