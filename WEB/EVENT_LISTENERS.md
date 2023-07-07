@@ -30,7 +30,7 @@ window.paytheory.errorObserver(error => {
 
 ### Callback Argument
 
-The callback will be passed a string indicating what happened in the SDK. The string should begin with one of the codes shown [here](web/errors).
+The callback will be passed a string indicating what happened in the SDK. The string should begin with one of the codes shown [here](/web/errors).
 
 Most errors will require the user to refresh the page and try again.
 
