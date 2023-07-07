@@ -199,7 +199,9 @@ This is the value of the `body` key in the response if the `type` is `FAILED`:
 - **brand** (String): The brand of the card
 - **state** (String): The state of the transaction
   - This will be `FAILURE`
-- **type** (String): Description of the failure
+- **reason** (Object):
+  - **error_code** (String): The error code for the failure. You can find a list of error codes [here](/overview/failed_transactions)
+  - **error_text** (String): The message for the failure
 
 ### Confirmation Response
 
@@ -226,7 +228,7 @@ If this is the first time it has been requested the user will have the opportuni
 
 This is the value of the `error` key in the response if the `type` is `ERROR`:
 
-- **message** (String): The error message
+- **message** (String): The error message. The string will begin with one of the codes shown [here](web/errors)
 
 ## confirm
 
