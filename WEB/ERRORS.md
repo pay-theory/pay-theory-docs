@@ -2,6 +2,8 @@
 You can be returned a number of errors from the SDK. They can be returned to the `errorObserver` or potentially in a response of type `ERROR` from a function call.  
 Below is a list of errors that can be returned from the SDK.
 
+
+
 | CODE                    | DESCRIPTION                                                                                                                     |
 |-------------------------|---------------------------------------------------------------------------------------------------------------------------------|
 | ACTION_COMPLETE         | Indicates that an action has been successfully completed and cannot be run again. The fields must be cleared and mounted again. |
@@ -17,5 +19,3 @@ Below is a list of errors that can be returned from the SDK.
 | SOCKET_ERROR            | Indicates an error with the call to the socket.                                                                                 |
 | TRANSACTING_FIELD_ERROR | Indicates either multiple transacting fields or no transacting fields were found visible on the DOM when running a function.    |
 
-
-ndicates that an action is currently in progress. The action cannot be run again until the current action is complete. |
