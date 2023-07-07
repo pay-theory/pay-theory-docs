@@ -228,7 +228,7 @@ If this is the first time it has been requested the user will have the opportuni
 
 This is the value of the `error` key in the response if the `type` is `ERROR`:
 
-- **message** (String): The error message. The string will begin with one of the codes shown [here](web/errors)
+- **message** (String): The error message. The string will begin with one of the codes shown [here](/web/errors)
 
 ## confirm
 
@@ -275,7 +275,7 @@ This is the value of the `body` key in the response if the `type` is `FAILED`:
 
 This is the value of the `error` key in the response if the `type` is `ERROR`:
 
-- **message** (String): The error message
+- **message** (String): The error message. The string will begin with one of the codes shown [here](/web/errors)
 
 
 ## cancel
@@ -292,7 +292,7 @@ The function returns a Promise that will contain `true` if the transaction was c
 
 This is the value of the `error` key in the response if the `type` is `ERROR`:
 
-- **message** (String): The error message
+- **message** (String): The error message. The string will begin with one of the codes shown [here](/web/errors)
 
 Once you click cancel the transaction will be cancelled and you will be able to run `transact` again.
 
@@ -379,7 +379,7 @@ This is the value of the `body` key in the response if the `type` is `TOKENIZED`
 
 This is the value of the `error` key in the response if the `type` is `ERROR`:
 
-- **message** (String): The error message
+- **message** (String): The error message. The string will begin with one of the codes shown [here](/web/errors)
 
 
 ## Payor Info Object
