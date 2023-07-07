@@ -303,6 +303,7 @@ If the receipt should be sent to the payor. Defaults to `false`. It is sent to t
             currency: String
             transaction_id: String
             created_at: DateTime
+            failed_reason: String
         }
     }
 }
@@ -334,6 +335,9 @@ The Pay Theory unique identifier for the transaction.
 
 **`created_at`: DateTime**  
 The date and time the transaction was created.
+
+**`failed_reason`: String**
+The error_code explaining why the transaction failed. This will be null if the transaction succeeded. You can find a list of error codes [here](/overview/failed_transactions)
 
 
 ## Create Refund
