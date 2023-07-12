@@ -303,6 +303,7 @@ If the receipt should be sent to the payor. Defaults to `false`. It is sent to t
             currency: String
             transaction_id: String
             created_at: DateTime
+            failed_reason: String
         }
     }
 }
@@ -334,6 +335,9 @@ The Pay Theory unique identifier for the transaction.
 
 **`created_at`: DateTime**  
 The date and time the transaction was created.
+
+**`failed_reason`: String**
+The failure_code explaining why the transaction failed.  If you are calling the createOneTimePayment endpoint and receive a status of FAILED, failure_reason is used instead of failure_code. The mappings are the same as listed [here](/overview/failed_transactions)
 
 
 ## Create Refund

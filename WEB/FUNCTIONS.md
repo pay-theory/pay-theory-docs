@@ -199,7 +199,9 @@ This is the value of the `body` key in the response if the `type` is `FAILED`:
 - **brand** (String): The brand of the card
 - **state** (String): The state of the transaction
   - This will be `FAILURE`
-- **type** (String): Description of the failure
+- **reason** (Object):
+  - **failure_code** (String): The failure code for the failure. You can find a list of failure codes [here](/overview/failed_transactions)
+  - **failure_text** (String): The message for the failure
 
 ### Confirmation Response
 
@@ -226,7 +228,7 @@ If this is the first time it has been requested the user will have the opportuni
 
 This is the value of the `error` key in the response if the `type` is `ERROR`:
 
-- **message** (String): The error message
+- **message** (String): The error message. The string will begin with one of the codes shown [here](/web/errors)
 
 ## confirm
 
@@ -273,7 +275,7 @@ This is the value of the `body` key in the response if the `type` is `FAILED`:
 
 This is the value of the `error` key in the response if the `type` is `ERROR`:
 
-- **message** (String): The error message
+- **message** (String): The error message. The string will begin with one of the codes shown [here](/web/errors)
 
 
 ## cancel
@@ -290,7 +292,7 @@ The function returns a Promise that will contain `true` if the transaction was c
 
 This is the value of the `error` key in the response if the `type` is `ERROR`:
 
-- **message** (String): The error message
+- **message** (String): The error message. The string will begin with one of the codes shown [here](/web/errors)
 
 Once you click cancel the transaction will be cancelled and you will be able to run `transact` again.
 
@@ -377,7 +379,7 @@ This is the value of the `body` key in the response if the `type` is `TOKENIZED`
 
 This is the value of the `error` key in the response if the `type` is `ERROR`:
 
-- **message** (String): The error message
+- **message** (String): The error message. The string will begin with one of the codes shown [here](/web/errors)
 
 
 ## Payor Info Object
