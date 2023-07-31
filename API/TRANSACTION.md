@@ -203,7 +203,7 @@ The query list to filter the Metadata, Payment Method, or Payor tied to the Paym
 }
 ```
 
-**`items`: [Settlement]**  
+**`items`: [Transaction]**  
 The list of transactions that are returned from the query.
 
 **`total_row_count`: Int**  
